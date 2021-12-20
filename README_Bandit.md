@@ -1,4 +1,4 @@
-# overthewire.org/Wargames/
+# https://overthewire.org/wargames/bandit/
 Bandit
 
 
