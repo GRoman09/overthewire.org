@@ -144,11 +144,14 @@ UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
 
 UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
 ********************************
-Bandit Level 3 → Level 4
+**Bandit Level 3 → Level 4
+--------------------------
 Level Goal
+
 The password for the next level is stored in a hidden file in the inhere directory.
 
 Commands you may need to solve this level
+
 ls, cd, cat, file, du, find
 
 ******************************************
@@ -156,87 +159,123 @@ ls, cd, cat, file, du, find
 Solution of level 3 -> 4
 
 ~$ ssh bandit.labs.overthewire.org -l bandit3 -p2220
-This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
 
 bandit3@bandit.labs.overthewire.org's password: UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
 
 bandit3@bandit:~$ ls -l
+
 total 4
+
 drwxr-xr-x 2 root root 4096 May  7 20:14 inhere
 
 bandit3@bandit:~$ ls -l
+
 total 4
+
 drwxr-xr-x 2 root root 4096 May  7 20:14 inhere
 
 bandit3@bandit:~$ file inhere/
+
 inhere/: directory
 
 bandit3@bandit:~$ cd inhere/
 
 bandit3@bandit:~/inhere$ ls -la
+
 total 12
+
 drwxr-xr-x 2 root    root    4096 May  7 20:14 .
+
 drwxr-xr-x 3 root    root    4096 May  7 20:14 ..
+
 -rw-r----- 1 bandit4 bandit3   33 May  7 20:14 .hidden
 
+
 bandit3@bandit:~/inhere$ cat .hidden 
+
 pIwrPrtPN36QITSp3EQaw936yaFoFgAB
 ********************************
-Bandit Level 4 → Level 5
+**Bandit Level 4 → Level 5
+--------------------------
 Level Goal
+
 The password for the next level is stored in the only human-readable file in the inhere directory. Tip: if your terminal is messed up, try the “reset” command.
 
 Commands you may need to solve this level
-ls, cd, cat, file, du, find
 
+ls, cd, cat, file, du, find
 *****************************************
 
 Solution of level 4 -> 5
 
 ~$ ssh bandit.labs.overthewire.org -l bandit4 -p2220
-This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
 
 bandit4@bandit.labs.overthewire.org's password: pIwrPrtPN36QITSp3EQaw936yaFoFgAB
 
 #Execution option 1
 
 bandit4@bandit:~$ ls
+
 inhere
 
 andit4@bandit:~$ file inhere/*
+
 inhere/-file00: data
+
 inhere/-file01: data
+
 inhere/-file02: data
+
 inhere/-file03: data
+
 inhere/-file04: data
+
 inhere/-file05: data
+
 inhere/-file06: data
+
 inhere/-file07: ASCII text
+
 inhere/-file08: data
+
 inhere/-file09: data
 
 bandit4@bandit:~$ cat inhere/-file07
+
 koReBOKuIDDepwhWk7jZC0RTdopnAYKh
 
 #Execution option 2
 
 bandit4@bandit:~/inhere$ file ./*
+
 ./-file00: data
+
 ./-file01: data
+
 ./-file02: data
+
 ./-file03: data
+
 ./-file04: data
+
 ./-file05: data
+
 ./-file06: data
+
 ./-file07: ASCII text
+
 ./-file08: data
+
 ./-file09: data
 
 bandit4@bandit:~/inhere$ cat ./-file07
+
 koReBOKuIDDepwhWk7jZC0RTdopnAYKh
 ********************************
-Bandit Level 5 → Level 6
+**Bandit Level 5 → Level 6
+--------------------------
 Level Goal
+
 The password for the next level is stored in a file somewhere under the inhere directory and has all of the following properties:
 
 human-readable
