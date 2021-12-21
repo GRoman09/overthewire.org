@@ -279,21 +279,24 @@ Level Goal
 The password for the next level is stored in a file somewhere under the inhere directory and has all of the following properties:
 
 human-readable
-1033 bytes in size
-not executable
-Commands you may need to solve this level
-ls, cd, cat, file, du, find
 
+1033 bytes in size
+
+not executable
+
+Commands you may need to solve this level
+
+ls, cd, cat, file, du, find
 *****************************************
 
 Solution of level 5 -> 6
 
 ~$ ssh bandit.labs.overthewire.org -l bandit5 -p2220
-This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
 
 bandit5@bandit.labs.overthewire.org's password: koReBOKuIDDepwhWk7jZC0RTdopnAYKh
 
 andit5@bandit:~$ ls
+
 inhere
 
 bandit5@bandit:~$ cd inhere/
@@ -301,18 +304,23 @@ bandit5@bandit:~$ cd inhere/
 #Execution option 1
 
 bandit5@bandit:~/inhere$ find -readable -size 1033c
+
 ./maybehere07/.file2
 
 bandit5@bandit:~/inhere$ cat maybehere07/.file2
+
 DXjZPULLxYr17uwoI01bNLQbtFemEgo7
 
 #Execution option 2
 
 bandit5@bandit:~/inhere$ find . -type f -size 1033c -exec cat {} \;
+
 DXjZPULLxYr17uwoI01bNLQbtFemEgo7
 ********************************
-Bandit Level 6 → Level 7
+**Bandit Level 6 → Level 7
+--------------------------
 Level Goal
+
 The password for the next level is stored somewhere on the server and has all of the following properties:
 
 owned by user bandit7
