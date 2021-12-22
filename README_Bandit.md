@@ -40,23 +40,7 @@ ls, cd, cat, file, du, find
 ************************
 Solution of level 0 -> 1
 
-~$ ls
-
-readme
-
-~$ file readme
-
-readme: ASCII text
-
-~$ du readme
-
-4 readme
-
-~$ find readme
-
-readme
-
-~$ cat readme
+![image](https://user-images.githubusercontent.com/96256687/147137280-fed919f4-92b5-48cf-97df-dca4ad08cfc3.png)
 
 boJ9jbbUNNfktd78OOpsqOltutMc3MY1 -> this line is also our password to the following level
 **************************
@@ -110,25 +94,7 @@ password 	- CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
 
 bandit2@bandit.labs.overthewire.org's password: CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
 
-~$ ls
-
-spaces in this filename
-
-~$ cat 
-
-.bash_logout             .profile  
-
-.bashrc                  spaces in this filename 
-
-#Execution option 1
-
-~$ cat spaces\ in\ this\ filename 
-
-UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
-
-#Execution option 2
-
-~$ cat 'spaces in this filename'
+![image](https://user-images.githubusercontent.com/96256687/147138841-5a6ba0a8-c0f1-4b03-a2fc-06831d92e58f.png)
 
 UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
 ********************************
@@ -150,36 +116,7 @@ Solution of level 3 -> 4
 
 bandit3@bandit.labs.overthewire.org's password: UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
 
-bandit3@bandit:~$ ls -l
-
-total 4
-
-drwxr-xr-x 2 root root 4096 May  7 20:14 inhere
-
-bandit3@bandit:~$ ls -l
-
-total 4
-
-drwxr-xr-x 2 root root 4096 May  7 20:14 inhere
-
-bandit3@bandit:~$ file inhere/
-
-inhere/: directory
-
-bandit3@bandit:~$ cd inhere/
-
-bandit3@bandit:~/inhere$ ls -la
-
-total 12
-
-drwxr-xr-x 2 root    root    4096 May  7 20:14 .
-
-drwxr-xr-x 3 root    root    4096 May  7 20:14 ..
-
--rw-r----- 1 bandit4 bandit3   33 May  7 20:14 .hidden
-
-
-bandit3@bandit:~/inhere$ cat .hidden 
+![image](https://user-images.githubusercontent.com/96256687/147140170-3731cc78-d08e-411c-aac1-07fb6c643221.png)
 
 pIwrPrtPN36QITSp3EQaw936yaFoFgAB
 ********************************
@@ -202,61 +139,11 @@ bandit4@bandit.labs.overthewire.org's password: pIwrPrtPN36QITSp3EQaw936yaFoFgAB
 
 #Execution option 1
 
-bandit4@bandit:~$ ls
-
-inhere
-
-andit4@bandit:~$ file inhere/*
-
-inhere/-file00: data
-
-inhere/-file01: data
-
-inhere/-file02: data
-
-inhere/-file03: data
-
-inhere/-file04: data
-
-inhere/-file05: data
-
-inhere/-file06: data
-
-inhere/-file07: ASCII text
-
-inhere/-file08: data
-
-inhere/-file09: data
-
-bandit4@bandit:~$ cat inhere/-file07
-
-koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+![image](https://user-images.githubusercontent.com/96256687/147141150-98504f3f-a5c9-49bd-8833-33f087a8989a.png)
 
 #Execution option 2
 
-bandit4@bandit:~/inhere$ file ./*
-
-./-file00: data
-
-./-file01: data
-
-./-file02: data
-
-./-file03: data
-
-./-file04: data
-
-./-file05: data
-
-./-file06: data
-
-./-file07: ASCII text
-
-./-file08: data
-
-./-file09: data
-
-bandit4@bandit:~/inhere$ cat ./-file07
+![image](https://user-images.githubusercontent.com/96256687/147141382-ca6441e9-7247-4acf-8aa9-e033165a22ef.png)
 
 koReBOKuIDDepwhWk7jZC0RTdopnAYKh
 ********************************
