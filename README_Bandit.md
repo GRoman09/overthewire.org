@@ -82,19 +82,7 @@ password 	- boJ9jbbUNNfktd78OOpsqOltutMc3MY1
 
 bandit1@bandit.labs.overthewire.org's password:boJ9jbbUNNfktd78OOpsqOltutMc3MY1
 
-~$ ls
-
-_-
-
-#Execution option 1
-
-~$ cat < - 
-
-CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
-
-#Execution option 2
-
-~$ cat ./-
+![image](https://user-images.githubusercontent.com/96256687/147136873-85064332-a545-4c32-90b7-c81f35edde9e.png) 
 
 CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
 ********************************
