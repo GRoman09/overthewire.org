@@ -40,23 +40,23 @@ ls, cd, cat, file, du, find
 ************************
 Solution of level 0 -> 1
 
-~$ ls ->
+~$ ls
 
 readme
 
-~$ file readme ->
+~$ file readme
 
 readme: ASCII text
 
-~$ du readme ->
+~$ du readme
 
 4 readme
 
-~$ find readme ->
+~$ find readme
 
 readme
 
-~$ cat readme ->
+~$ cat readme
 
 boJ9jbbUNNfktd78OOpsqOltutMc3MY1 -> this line is also our password to the following level
 **************************
