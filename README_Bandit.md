@@ -1099,8 +1099,11 @@ cluFn7wTiGryunymYOu4RcffSxQluehd
 
 closed
 ********************************
-Bandit Level 16 → Level 17
+
+**Bandit Level 16 → Level 17
+----------------------------
 Level Goal
+
 The credentials for the next level can be retrieved by submitting the password of the current level to a port on localhost in the range 31000 to 32000. First find out which of these ports have a server listening on them. Then find out which of those speak SSL and which don’t. There is only 1 server that will give the next credentials, the others will simply send back to you whatever you send to it.
 
 Commands you may need to solve this level
@@ -1236,8 +1239,11 @@ Are you sure you want to continue connecting (yes/no)? yes
 bandit17@bandit:~$ cat /etc/bandit_pass/bandit17 
 xLYVMN9WE5zQ5vHacb0sZEVqbrp7nBTn
 ************************************************
-Bandit Level 17 → Level 18
+
+**Bandit Level 17 → Level 18
+----------------------------
 Level Goal
+
 There are 2 files in the homedirectory: passwords.old and passwords.new. The password for the next level is in passwords.new and is the only line that has been changed between passwords.old and passwords.new
 
 NOTE: if you have solved this level and see ‘Byebye!’ when trying to log into bandit18, this is related to the next level, bandit19
@@ -1269,8 +1275,10 @@ bandit17@bandit:~$ diff passwords.new passwords.old
 bandit17@bandit:~$ grep -vf passwords.old passwords.new
 kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
 ********************************
-Bandit Level 18 → Level 19
+**Bandit Level 18 → Level 19
+----------------------------
 Level Goal
+
 The password for the next level is stored in a file readme in the homedirectory. Unfortunately, someone has modified .bashrc to log you out when you log in with SSH.
 
 Commands you may need to solve this level
@@ -1308,8 +1316,11 @@ readme
 $ cat readme    
 IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
 ********************************
-Bandit Level 19 → Level 20
+
+**Bandit Level 19 → Level 20
+----------------------------
 Level Goal
+
 To gain access to the next level, you should use the setuid binary in the homedirectory. Execute it without arguments to find out how to use it. The password for this level can be found in the usual place (/etc/bandit_pass), after you have used the setuid binary.
 
 Helpful Reading Material
@@ -1341,8 +1352,11 @@ Run a command as another user.
 bandit19@bandit:~$ ./bandit20-do cat /etc/bandit_pass/bandit20
 GbKksEFF4yrVs6il55v6gwY5aVje5f0j
 ********************************
-Bandit Level 20 → Level 21
+
+**Bandit Level 20 → Level 21
+----------------------------
 Level Goal
+
 There is a setuid binary in the homedirectory that does the following: it makes a connection to localhost on the port you specify as a commandline argument. It then reads a line of text from the connection and compares it to the password in the previous level (bandit20). If the password is correct, it will transmit the password for the next level (bandit21).
 
 NOTE: Try connecting to your own network daemon to see if it works as you think
@@ -1443,8 +1457,11 @@ cat /etc/bandit_pass/bandit22 > /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
 bandit21@bandit:/etc/cron.d$ cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
 Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
 ********************************
-Bandit Level 22 → Level 23
+
+**Bandit Level 22 → Level 23
+----------------------------
 Level Goal
+
 A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed.
 
 NOTE: Looking at shell scripts written by other people is a very useful skill. The script for this level is intentionally made easy to read. If you are having problems understanding what it does, try executing it to see the debug information it prints.
@@ -1480,8 +1497,11 @@ bandit22@bandit:~$ echo I am user bandit23 | md5sum | cut -d ' ' -f 1
 bandit22@bandit:~$ cat /tmp/8ca319486bfbbc3663ea0fbe81326349
 jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
 ********************************
-Bandit Level 23 → Level 24
+
+**Bandit Level 23 → Level 24
+----------------------------
 Level Goal
+
 A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed.
 
 NOTE: This level requires you to create your own first shell-script. This is a very big step and you should be proud of yourself when you beat this level!
@@ -1572,8 +1592,11 @@ bandit23@bandit:/tmp/secttp$ ls -al password
 bandit23@bandit:/tmp/secttp$ cat password
 UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
 ********************************
-Bandit Level 24 → Level 25
+
+**Bandit Level 24 → Level 25
+----------------------------
 Level Goal
+
 A daemon is listening on port 30002 and will give you the password for bandit25 if given the password for bandit24 and a secret numeric 4-digit pincode. There is no way to retrieve the pincode except by going through all of the 10000 combinations, called brute-forcing.
 
 ***************************************************************************************
