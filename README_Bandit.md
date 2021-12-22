@@ -324,195 +324,245 @@ Level Goal
 The password for the next level is stored somewhere on the server and has all of the following properties:
 
 owned by user bandit7
+
 owned by group bandit6
+
 33 bytes in size
+
 Commands you may need to solve this level
+
 ls, cd, cat, file, du, find, grep
-
 ******************************************
-
 Solution of level 6 -> 7
 
 ~$ ssh bandit.labs.overthewire.org -l bandit6 -p2220
-This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
 
 bandit6@bandit.labs.overthewire.org's password: DXjZPULLxYr17uwoI01bNLQbtFemEgo7
 
 #Execution option 1
 
 bandit6@bandit:~$ find / -user bandit7 -group bandit6 -size 33c 2>/dev/null
+
 /var/lib/dpkg/info/bandit7.password
 
 bandit6@bandit:~$ cat /var/lib/dpkg/info/bandit7.password
+
 HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
 
 #Execution option 2
 
 bandit6@bandit:~$ find / -user bandit7 -group bandit6 -size 33c 2>/dev/null -exec cat {} \;
+
 HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
 
 #Execution option 3
 
 bandit6@bandit:~$ find / -group bandit6 -user bandit7 -size 33c -exec cat {} \;
 ...
+
 find: ‘/var/lib/polkit-1’: Permission denied
+
 HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+
 find: ‘/var/log’: Permission denied
+
 ...
 
 #Execution option 4
 
 bandit6@bandit:~$ find / -user bandit7 -group bandit6 -size 33c 2>&1 | grep -F -v Permission
+
 ...
 find: ‘/proc/16675/fdinfo/5’: No such file or directory
+
 /var/lib/dpkg/info/bandit7.password
 
 #Execution option 5
 
-bandit6@bandit:~$ cd /                                                               
+bandit6@bandit:~$ cd / 
+
 bandit6@bandit:/$ cat `find . -size 33c -group bandit6 -user bandit7 2>/dev/null`
+
 HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs 
 
-bandit6@bandit:~$ cd / && cat `find . -size 33c -group bandit6 -user bandit7 2>/dev/null`      
+bandit6@bandit:~$ cd / && cat `find . -size 33c -group bandit6 -user bandit7 2>/dev/null`
+
 HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs 
 ********************************
-Bandit Level 7 → Level 8
+
+**Bandit Level 7 → Level 8
+--------------------------
 Level Goal
+
 The password for the next level is stored in the file data.txt next to the word millionth
 
 Commands you may need to solve this level
+
 grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd
-
 ************************************************************
-
 Solution of level 7 -> 8
 
 ~$ ssh bandit.labs.overthewire.org -l bandit7 -p2220
-This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
 
 bandit7@bandit.labs.overthewire.org's password: HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
 
 #Execution option 1
 
 bandit7@bandit:~$ ls
+
 data.txt
+
 bandit7@bandit:~$ cat data.txt | grep "millionth"
+
 millionth       cvX2JJa4CFALtqS87jk27qwqGhBM9plV
 
 #Execution option 2
 
 bandit7@bandit:~$ grep "millionth" data.txt
+
 millionth       cvX2JJa4CFALtqS87jk27qwqGhBM9plV
 ************************************************
-Bandit Level 8 → Level 9
+
+**Bandit Level 8 → Level 9
+--------------------------
 Level Goal
+
 The password for the next level is stored in the file data.txt and is the only line of text that occurs only once
 
 Commands you may need to solve this level
+
 grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd
 
 Helpful Reading Material
-Piping and Redirection
 
+Piping and Redirection
 *************************************************************
 
 Solution of level 8 -> 9
 
 ~$ ssh bandit.labs.overthewire.org -l bandit8 -p2220
-This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
 
 bandit8@bandit.labs.overthewire.org's password: cvX2JJa4CFALtqS87jk27qwqGhBM9plV
 
 #Execution option 1
 
-bandit8@bandit:~$ sort data.txt | uniq --unique 
+bandit8@bandit:~$ sort data.txt | uniq --unique
+
 UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
 
 #Execution option 2
 
 bandit8@bandit:~$ sort data.txt | uniq -c | grep '^ *1 '
-	1 UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+
+1 UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
 
 #Execution option 3
 
 andit8@bandit:~$ cat data.txt | sort | uniq --unique 
+
 UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
 ********************************
-Bandit Level 9 → Level 10
+
+**Bandit Level 9 → Level 10
+---------------------------
 Level Goal
+
 The password for the next level is stored in the file data.txt in one of the few human-readable strings, preceded by several ‘=’ characters.
 
 Commands you may need to solve this level
-grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd
 
+grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd
 *************************************************************
 
 Solution of level 9 -> 10
 
 ~$ ssh bandit.labs.overthewire.org -l bandit9 -p2220
-This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
 
 bandit9@bandit.labs.overthewire.org's password: UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
 
 #Execution option 1
 
 bandit9@bandit:~$ grep -a == data.txt
+
 ...===== truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
 
 #Execution option 2
 
 bandit9@bandit:~$ strings data.txt | grep -E '=+'
+
 ========== the*2i"4
+
 =:G e
+
 ========== password
+
 <I=zsGi
+
 Z)========== is
+
 A=|t&E
+
 Zdb=
+
 c^ LAh=3G
+
 *SF=s
+
 &========== truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
+
 S=A.H&^
 ********************************************
-Bandit Level 10 → Level 11
+
+**Bandit Level 10 → Level 11
+----------------------------
 Level Goal
+
 The password for the next level is stored in the file data.txt, which contains base64 encoded data
 
 Commands you may need to solve this level
+
 grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd
 
 Helpful Reading Material
-Base64 on Wikipedia
 
+Base64 on Wikipedia
 *************************************************************
 
 Solution of level 10 -> 11
 
 ~$ ssh bandit.labs.overthewire.org -l bandit10 -p2220
-This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
 
 bandit10@bandit.labs.overthewire.org's password: truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
 
 #Execution option 1
 
 bandit10@bandit:~$ ls
+
 data.txt
+
 bandit10@bandit:~$ cat data.txt 
+
 VGhlIHBhc3N3b3JkIGlzIElGdWt3S0dzRlc4TU9xM0lSRnFyeEUxaHhUTkViVVBSCg==
+
 bandit10@bandit:~$ base64 --decode data.txt 
+
 The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
 
 #Execution option 2
 
 bandit10@bandit:~$ cat data.txt | base64 --decode 
+
 The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
 
 #Execution option 3
 
 bandit10@bandit:~$ base64 -d data.txt | cut -d" " -f4
+
 IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
 ********************************
-Bandit Level 11 → Level 12
+
+**Bandit Level 11 → Level 12
+----------------------------
 Level Goal
 The password for the next level is stored in the file data.txt, where all lowercase (a-z) and uppercase (A-Z) letters have been rotated by 13 positions
 
@@ -564,8 +614,11 @@ The password is 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
 bandit11@bandit:~$ cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m' | cut -d" " -f4
 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
 ********************************
-Bandit Level 12 → Level 13
+
+**Bandit Level 12 → Level 13
+----------------------------
 Level Goal
+
 The password for the next level is stored in the file data.txt, which is a hexdump of a file that has been repeatedly compressed. For this level it may be useful to create a directory under /tmp in which you can work using mkdir. For example: mkdir /tmp/myname123. Then copy the datafile using cp, and rename it using mv (read the manpages!)
 
 Commands you may need to solve this level
@@ -716,8 +769,11 @@ total 52
 -rw-r--r-- 1 bandit12 root   606 Jul 29 12:26 data.bin
 -rw-r----- 1 bandit12 root  2582 Jul 29 12:24 data.txt
 ******************************************************
-Bandit Level 13 → Level 14
+
+**Bandit Level 13 → Level 14
+----------------------------
 Level Goal
+
 The password for the next level is stored in /etc/bandit_pass/bandit14 and can only be read by user bandit14. For this level, you don’t get the next password, but you get a private SSH key that can be used to log into the next level. Note: localhost is a hostname that refers to the machine you are working on
 
 Commands you may need to solve this level
@@ -760,9 +816,11 @@ bandit14@localhost's password: 4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
 bandit14@bandit:~$ whoami
 bandit14
 *************************
-Bandit Level 14 → Level 15
+**Bandit Level 14 → Level 15
+----------------------------
 Level Goal
-The password for the next level can be retrieved by submitting the password of the current level to port 30000 on localhost. [Пароль для следующего уровня можно получить, отправив пароль текущего уровня на порт 30000 на локальном хосте.]
+
+The password for the next level can be retrieved by submitting the password of the current level to port 30000 on localhost.
 Commands you may need to solve this level
 ssh, telnet, nc, openssl, s_client, nmap
 
@@ -788,8 +846,11 @@ bandit14@bandit:~$ nc localhost  30000
 Correct!
 BfMYroe26WYalil77FoDi9qh59eK5xNr
 ********************************
-Bandit Level 15 → Level 16
+
+**Bandit Level 15 → Level 16
+----------------------------
 Level Goal
+
 The password for the next level can be retrieved by submitting the password of the current level to port 30001 on localhost using SSL encryption.
 
 Helpful note: Getting “HEARTBEATING” and “Read R BLOCK”? Use -ign_eof and read the “CONNECTED COMMANDS” section in the manpage. Next to ‘R’ and ‘Q’, the ‘B’ command also works in this version of that command…
@@ -806,26 +867,35 @@ OpenSSL Cookbook - Testing with OpenSSL
 Solution of level 15 -> 16
 
 ~$ ssh bandit.labs.overthewire.org -l bandit15 -p2220
-This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
 
 bandit15@bandit.labs.overthewire.org's password: BfMYroe26WYalil77FoDi9qh59eK5xNr
 
 #Execution option 1
 
 bandit15@bandit:~$ openssl s_client -connect localhost:30001
+
 CONNECTED(00000003)
+
 depth=0 CN = localhost
+
 verify error:num=18:self signed certificate
+
 verify return:1
+
 depth=0 CN = localhost
+
 verify return:1
 ---
 Certificate chain
+
  0 s:/CN=localhost
+ 
    i:/CN=localhost
 ---
 Server certificate
+
 -----BEGIN CERTIFICATE-----
+
 MIICBjCCAW+gAwIBAgIEDU18oTANBgkqhkiG9w0BAQUFADAUMRIwEAYDVQQDDAls
 b2NhbGhvc3QwHhcNMjAwNTA3MTgxNTQzWhcNMjEwNTA3MTgxNTQzWjAUMRIwEAYD
 VQQDDAlsb2NhbGhvc3QwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAK3CPNFR
@@ -837,24 +907,38 @@ ZWQgYnkgTmNhdC4gU2VlIGh0dHBzOi8vbm1hcC5vcmcvbmNhdC8uMA0GCSqGSIb3
 DQEBBQUAA4GBAC9uy1rF2U/OSBXbQJYuPuzT5mYwcjEEV0XwyiX1MFZbKUlyFZUw
 rq+P1HfFp+BSODtk6tHM9bTz+p2OJRXuELG0ly8+Nf/hO/mYS1i5Ekzv4PL9hO8q
 PfmDXTHs23Tc7ctLqPRj4/4qxw6RF4SM+uxkAuHgT/NDW1LphxkJlKGn
+
 -----END CERTIFICATE-----
+
 subject=/CN=localhost
+
 issuer=/CN=localhost
 ---
 No client certificate CA names sent
+
 Peer signing digest: SHA512
+
 Server Temp Key: X25519, 253 bits
+
 ---
 SSL handshake has read 1019 bytes and written 269 bytes
+
 Verification error: self signed certificate
 ---
 New, TLSv1.2, Cipher is ECDHE-RSA-AES256-GCM-SHA384
+
 Server public key is 1024 bit
+
 Secure Renegotiation IS supported
+
 Compression: NONE
+
 Expansion: NONE
+
 No ALPN negotiated
+
 SSL-Session:
+
     Protocol  : TLSv1.2
     Cipher    : ECDHE-RSA-AES256-GCM-SHA384
     Session-ID: 1193DFF01A55845B11DB75667AF8CC93F2CA944167D1FD003EFC26416CE83169
@@ -865,6 +949,7 @@ SSL-Session:
     SRP username: None
     TLS session ticket lifetime hint: 7200 (seconds)
     TLS session ticket:
+    
     0000 - aa 02 e6 3a 2e 0b c8 5d-6f 54 4a 1b 5a e0 2c 0e   ...:...]oTJ.Z.,.
     0010 - 90 88 b6 5b 82 4a a0 69-ea d7 59 48 29 a4 57 b7   ...[.J.i..YH).W.
     0020 - ec 43 df b8 12 b6 8c 0c-44 59 00 f5 c2 d1 33 fe   .C......DY....3.
@@ -877,12 +962,17 @@ SSL-Session:
     0090 - 4c 0e 82 26 92 f4 ba 54-bb 32 0f 43 c7 8a fa b5   L..&...T.2.C....
 
     Start Time: 1596046156
+    
     Timeout   : 7200 (sec)
+    
     Verify return code: 18 (self signed certificate)
+    
     Extended master secret: yes
 ---
 BfMYroe26WYalil77FoDi9qh59eK5xNr
+
 Correct!
+
 cluFn7wTiGryunymYOu4RcffSxQluehd
 
 closed
