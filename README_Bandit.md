@@ -170,25 +170,17 @@ Solution of level 5 -> 6
 
 bandit5@bandit.labs.overthewire.org's password: koReBOKuIDDepwhWk7jZC0RTdopnAYKh
 
-andit5@bandit:~$ ls
-
-inhere
-
-bandit5@bandit:~$ cd inhere/
-
 #Execution option 1
 
-bandit5@bandit:~/inhere$ find -readable -size 1033c
-
-./maybehere07/.file2
-
-bandit5@bandit:~/inhere$ cat maybehere07/.file2
-
-DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+![image](https://user-images.githubusercontent.com/96256687/147389882-bd6cc002-0ac0-4f4d-af71-47525aff8327.png)
 
 #Execution option 2
 
-bandit5@bandit:~/inhere$ find . -type f -size 1033c -exec cat {} \;
+![image](https://user-images.githubusercontent.com/96256687/147389929-d448d0df-988a-4f52-b466-b55bd947655d.png)
+
+#Execution option 3
+
+![image](https://user-images.githubusercontent.com/96256687/147390002-8bfa3b88-ecfc-4d19-87d8-df281cc7836d.png)
 
 DXjZPULLxYr17uwoI01bNLQbtFemEgo7
 ********************************
@@ -216,51 +208,19 @@ bandit6@bandit.labs.overthewire.org's password: DXjZPULLxYr17uwoI01bNLQbtFemEgo7
 
 #Execution option 1
 
-bandit6@bandit:~$ find / -user bandit7 -group bandit6 -size 33c 2>/dev/null
-
-/var/lib/dpkg/info/bandit7.password
-
-bandit6@bandit:~$ cat /var/lib/dpkg/info/bandit7.password
-
-HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+![image](https://user-images.githubusercontent.com/96256687/147390017-46f10e34-0e9f-4b90-9e70-a871d38eec62.png)
 
 #Execution option 2
 
-bandit6@bandit:~$ find / -user bandit7 -group bandit6 -size 33c 2>/dev/null -exec cat {} \;
-
-HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+![image](https://user-images.githubusercontent.com/96256687/147390042-0f9728b5-9703-4c18-bea6-39cbe2599a09.png)
 
 #Execution option 3
 
-bandit6@bandit:~$ find / -group bandit6 -user bandit7 -size 33c -exec cat {} \;
-...
-
-find: ‘/var/lib/polkit-1’: Permission denied
-
-HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
-
-find: ‘/var/log’: Permission denied
-
-...
+![image](https://user-images.githubusercontent.com/96256687/147390269-aa24739a-6222-4da5-b3ed-5320fed818b4.png)
 
 #Execution option 4
 
-bandit6@bandit:~$ find / -user bandit7 -group bandit6 -size 33c 2>&1 | grep -F -v Permission
-
-...
-find: ‘/proc/16675/fdinfo/5’: No such file or directory
-
-/var/lib/dpkg/info/bandit7.password
-
-#Execution option 5
-
-bandit6@bandit:~$ cd / 
-
-bandit6@bandit:/$ cat `find . -size 33c -group bandit6 -user bandit7 2>/dev/null`
-
-HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs 
-
-bandit6@bandit:~$ cd / && cat `find . -size 33c -group bandit6 -user bandit7 2>/dev/null`
+![image](https://user-images.githubusercontent.com/96256687/147390326-d61e1e8d-4450-47b4-83d9-4cb4f4792735.png)
 
 HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs 
 ********************************
@@ -283,19 +243,13 @@ bandit7@bandit.labs.overthewire.org's password: HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
 
 #Execution option 1
 
-bandit7@bandit:~$ ls
-
-data.txt
-
-bandit7@bandit:~$ cat data.txt | grep "millionth"
-
-millionth       cvX2JJa4CFALtqS87jk27qwqGhBM9plV
+![image](https://user-images.githubusercontent.com/96256687/147390414-340c4aa9-2753-477e-a993-5754ffed7a86.png)
 
 #Execution option 2
 
-bandit7@bandit:~$ grep "millionth" data.txt
+![image](https://user-images.githubusercontent.com/96256687/147390436-45b3aaa3-a338-48b3-830d-dc67d08095e2.png)
 
-millionth       cvX2JJa4CFALtqS87jk27qwqGhBM9plV
+cvX2JJa4CFALtqS87jk27qwqGhBM9plV
 ************************************************
 
 **Bandit Level 8 → Level 9
@@ -319,21 +273,9 @@ Solution of level 8 -> 9
 
 bandit8@bandit.labs.overthewire.org's password: cvX2JJa4CFALtqS87jk27qwqGhBM9plV
 
-#Execution option 1
+#Execution option 1--3
 
-bandit8@bandit:~$ sort data.txt | uniq --unique
-
-UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
-
-#Execution option 2
-
-bandit8@bandit:~$ sort data.txt | uniq -c | grep '^ *1 '
-
-1 UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
-
-#Execution option 3
-
-andit8@bandit:~$ cat data.txt | sort | uniq --unique 
+![image](https://user-images.githubusercontent.com/96256687/147390871-032bac38-a4ca-47c1-be13-6d9a73696b55.png) 
 
 UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
 ********************************
