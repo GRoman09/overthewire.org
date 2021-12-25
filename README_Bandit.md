@@ -307,28 +307,10 @@ bandit9@bandit:~$ grep -a == data.txt
 
 bandit9@bandit:~$ strings data.txt | grep -E '=+'
 
-========== the*2i"4
+![image](https://user-images.githubusercontent.com/96256687/147391434-042ce6cf-45f3-44ae-96ca-e63b2391821b.png)
 
-=:G e
-
-========== password
-
-<I=zsGi
-
-Z)========== is
-
-A=|t&E
-
-Zdb=
-
-c^ LAh=3G
-
-*SF=s
-
-&========== truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
-
-S=A.H&^
-********************************************
+truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
+********************************
 
 **Bandit Level 10 → Level 11
 ----------------------------
@@ -353,27 +335,11 @@ bandit10@bandit.labs.overthewire.org's password: truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuL
 
 #Execution option 1
 
-bandit10@bandit:~$ ls
+![image](https://user-images.githubusercontent.com/96256687/147391539-5238c3c6-78cc-42d2-9b4f-08a1beee0a8c.png)
 
-data.txt
+#Execution option 2-3
 
-bandit10@bandit:~$ cat data.txt 
-
-VGhlIHBhc3N3b3JkIGlzIElGdWt3S0dzRlc4TU9xM0lSRnFyeEUxaHhUTkViVVBSCg==
-
-bandit10@bandit:~$ base64 --decode data.txt 
-
-The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
-
-#Execution option 2
-
-bandit10@bandit:~$ cat data.txt | base64 --decode 
-
-The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
-
-#Execution option 3
-
-bandit10@bandit:~$ base64 -d data.txt | cut -d" " -f4
+![image](https://user-images.githubusercontent.com/96256687/147391576-798ffc3e-8808-4282-a6e8-8b28c92e36b6.png)
 
 IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
 ********************************
