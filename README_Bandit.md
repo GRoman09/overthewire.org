@@ -347,54 +347,28 @@ IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
 **Bandit Level 11 → Level 12
 ----------------------------
 Level Goal
+
 The password for the next level is stored in the file data.txt, where all lowercase (a-z) and uppercase (A-Z) letters have been rotated by 13 positions
 
 Commands you may need to solve this level
+
 grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd
 
 Helpful Reading Material
-Rot13 on Wikipedia
 
+Rot13 on Wikipedia
 ************************************************************
 
 Solution of level 11 -> 12
 
 ~$ ssh bandit.labs.overthewire.org -l bandit11 -p2220
-This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
 
 bandit11@bandit.labs.overthewire.org's password: IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
 
 #Execution option 1
 
-bandit11@bandit:~$ ls
-data.txt
-bandit11@bandit:~$ cat data.txt 
-Gur cnffjbeq vf 5Gr8L4qetPEsPk8htqjhRK8XSP6x2RHh
->>https://rot13.com -> copy/paste "Gur cnffjbeq vf 5Gr8L4qetPEsPk8htqjhRK8XSP6x2RHh" -> "The password is 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu"
+![image](https://user-images.githubusercontent.com/96256687/147414754-822b629c-ab55-477f-984c-4a595bfce112.png)
 
-#Execution option 2
-
-bandit11@bandit:~$ cat data.txt | tr a-zA-Z n-za-mN-ZA-M
-The password is 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
-
-#Execution option 3
-
-bandit11@bandit:~$ cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'
-The password is 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
-
-#Execution option 4
-
-bandit11@bandit:~$ cat data.txt | tr “[a-zA-Z]” “[n-za-mN-ZA-M]”
-The password is 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
-
-#Execution option 5
-
-bandit11@bandit:~$ cat data.txt | tr “n-za-mN-ZA-M” “a-zA-Z”
-The password is 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
-
-#Execution option 6
-
-bandit11@bandit:~$ cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m' | cut -d" " -f4
 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
 ********************************
 
@@ -405,152 +379,29 @@ Level Goal
 The password for the next level is stored in the file data.txt, which is a hexdump of a file that has been repeatedly compressed. For this level it may be useful to create a directory under /tmp in which you can work using mkdir. For example: mkdir /tmp/myname123. Then copy the datafile using cp, and rename it using mv (read the manpages!)
 
 Commands you may need to solve this level
+
 grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd, mkdir, cp, mv, file
 
 Helpful Reading Material
-Hex dump on Wikipedia
 
+Hex dump on Wikipedia
 ************************************************************************************
 
 Solution of level 12 -> 13 
 
 ~$ ssh bandit.labs.overthewire.org -l bandit12 -p2220
-This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
 
 bandit12@bandit.labs.overthewire.org's password: 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
 
 #Execution option 1
 
-bandit12@bandit:~$ ls
-data.txt
-bandit12@bandit:~$ mkdir /tmp/myname123
-mkdir: cannot create directory ‘/tmp/myname123’: File exists
-bandit12@bandit:/tmp/myname123$ cp ~bandit12/data.txt /tmp/myname123 && mv data.txt data_test.txt
-bandit12@bandit:/tmp/myname123$ ls
-data_test.txt
-bandit12@bandit:/tmp/myname123$ file data_test.txt 
-data_test.txt: ASCII 
-bandit12@bandit:/tmp/myname123$ xxd -r data_test.txt data
-bandit12@bandit:/tmp/myname123$ ls
-data  data_test.txt
-bandit12@bandit:/tmp/myname123$ file data
-data: gzip compressed data, was "data2.bin", last modified: Thu May  7 18:14:30 2020, max compression, from Unix
-
-bandit12@bandit:/tmp/myname123$ mv data data.gz
-bandit12@bandit:/tmp/myname123$ gzip -d data.gz
-bandit12@bandit:/tmp/myname123$ file data
-data: bzip2 compressed data, block size = 900k
-
-bandit12@bandit:/tmp/myname123$ mv data data.bz2
-bandit12@bandit:/tmp/myname123$ bzip2 -d data.bz2
-bandit12@bandit:/tmp/myname123$ file data
-data: gzip compressed data, was "data4.bin", last modified: Thu May  7 18:14:30 2020, max compression, from Unix
-
-bandit12@bandit:/tmp/myname123$ mv data data.gz
-bandit12@bandit:/tmp/myname123$ gzip -d data.gz
-bandit12@bandit:/tmp/myname123$ file data
-data: POSIX tar archive (GNU)
-
-bandit12@bandit:/tmp/myname123$ mv data data.tar
-bandit12@bandit:/tmp/myname123$ tar xvf data.tar
-data5.bin
-bandit12@bandit:/tmp/myname123$ file data5.bin
-data5.bin: POSIX tar archive (GNU)
-
-bandit12@bandit:/tmp/myname123$ mv data5.bin data5.tar
-bandit12@bandit:/tmp/myname123$ tar xvf data5.tar
-data6.bin
-bandit12@bandit:/tmp/myname123$ file data6.bin
-data6.bin: bzip2 compressed data, block size = 900k
-
-bandit12@bandit:/tmp/myname123$ mv data6.bin data6.tar
-bandit12@bandit:/tmp/myname123$ tar xvf data6.tar
-data8.bin
-bandit12@bandit:/tmp/myname123$ file data8.bin
-data8.bin: gzip compressed data, was "data9.bin", last modified: Thu May  7 18:14:30 2020, max compression, from Unix
-
-bandit12@bandit:/tmp/myname123$ mv data8.bin data8.gz
-bandit12@bandit:/tmp/myname123$ gzip -d data8.gz
-bandit12@bandit:/tmp/myname123$ file data8
-data8: ASCII text
-
-bandit12@bandit:/tmp/myname123$ cat data8
-The password is 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
-
-bandit12@bandit:/tmp/myname123$ ls
-data5.tar  data6.tar  data8  data.tar  data_test.txt
-
-bandit12@bandit:/tmp/myname123$ rm -rf /tmp/myname123 -v
-removed '/tmp/myname123/data6.tar'
-removed '/tmp/myname123/data.tar'
-removed '/tmp/myname123/data8'
-removed '/tmp/myname123/data5.tar'
-removed '/tmp/myname123/data_test.txt'
-removed directory '/tmp/myname123'
-
+![image](https://user-images.githubusercontent.com/96256687/147415469-58c1ce7c-334b-47ce-86b5-e1914cc20f0e.png)
 
 #Execution option 2
 
-bandit12@bandit:~$ mkdir /tmp/myname123
-bandit12@bandit:~$ cp data.txt /tmp/myname123
-bandit12@bandit:~$ cd /tmp/myname123
-bandit12@bandit:/tmp/myname123$ ls
-data.txt
+![image](https://user-images.githubusercontent.com/96256687/147415633-d0ba7fec-136a-4e1b-a85a-fc7f5d20b53d.png)
 
-bandit12@bandit:/tmp/myname123$ xxd -r data.txt > data.bin
-bandit12@bandit:/tmp/myname123$ ls
-data.bin  data.txt
-
-andit12@bandit:/tmp/myname123$ zcat data.bin > data1
-bandit12@bandit:/tmp/myname123$ ls
-data1  data.bin  data.txt
-
-bandit12@bandit:/tmp/myname123$ file data1 data.bin data.txt 
-data1:    bzip2 compressed data, block size = 900k
-data.bin: gzip compressed data, was "data2.bin", last modified: Thu May  7 18:14:30 2020, max compression, from Unix
-data.txt: ASCII text
-
-bandit12@bandit:/tmp/myname123$ bzcat data1 > data2
-bandit12@bandit:/tmp/myname123$ file data2
-data2: gzip compressed data, was "data4.bin", last modified: Thu May  7 18:14:30 2020, max compression, from Unix
-
-bandit12@bandit:/tmp/myname123$ tar -xvf data2
-data5.bin
-bandit12@bandit:/tmp/myname123$ file data5.bin 
-data5.bin: POSIX tar archive (GNU)
-
-andit12@bandit:/tmp/myname123$ tar -xvf data5.bin
-data6.bin
-bandit12@bandit:/tmp/myname123$ file data6.bin 
-data6.bin: bzip2 compressed data, block size = 900k
-
-bandit12@bandit:/tmp/myname123$ bzcat data6.bin > data7
-bandit12@bandit:/tmp/myname123$ file data7
-data7: POSIX tar archive (GNU)
-
-bandit12@bandit:/tmp/myname123$ tar -xvf data7
-data8.bin
-bandit12@bandit:/tmp/myname123$ file data8.bin 
-data8.bin: gzip compressed data, was "data9.bin", last modified: Thu May  7 18:14:30 2020, max compression, from Unix
-
-bandit12@bandit:/tmp/myname123$ zcat data8.bin > data9
-bandit12@bandit:/tmp/myname123$ file data9
-data9: ASCII text
-
-bandit12@bandit:/tmp/myname123$ cat data9
 The password is 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
-
-bandit12@bandit:/tmp/myname123$ ls -l
-total 52
--rw-r--r-- 1 bandit12 root   573 Jul 29 12:28 data1
--rw-r--r-- 1 bandit12 root   431 Jul 29 12:32 data2
--rw-r--r-- 1 bandit12 root 10240 May  7 20:14 data5.bin
--rw-r--r-- 1 bandit12 root   222 May  7 20:14 data6.bin
--rw-r--r-- 1 bandit12 root 10240 Jul 29 12:38 data7
--rw-r--r-- 1 bandit12 root    79 May  7 20:14 data8.bin
--rw-r--r-- 1 bandit12 root    49 Jul 29 12:41 data9
--rw-r--r-- 1 bandit12 root   606 Jul 29 12:26 data.bin
--rw-r----- 1 bandit12 root  2582 Jul 29 12:24 data.txt
 ******************************************************
 
 **Bandit Level 13 → Level 14
@@ -560,9 +411,11 @@ Level Goal
 The password for the next level is stored in /etc/bandit_pass/bandit14 and can only be read by user bandit14. For this level, you don’t get the next password, but you get a private SSH key that can be used to log into the next level. Note: localhost is a hostname that refers to the machine you are working on
 
 Commands you may need to solve this level
+
 ssh, telnet, nc, openssl, s_client, nmap
 
 Helpful Reading Material
+
 SSH/OpenSSH/Keys
 
 ******************************************
@@ -570,63 +423,49 @@ SSH/OpenSSH/Keys
 Solution of level 13 -> 14
 
 ~$ ssh bandit.labs.overthewire.org -l bandit13 -p2220
-This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
 
 bandit13@bandit.labs.overthewire.org's password: 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
 
-bandit13@bandit:~$ ls
-sshkey.private
-bandit13@bandit:~$ ssh bandit14@localhost -i sshkey.private 
-Could not create directory '/home/bandit13/.ssh'.
-The authenticity of host 'localhost (127.0.0.1)' can't be established.
-ECDSA key fingerprint is SHA256:98UL0ZWr85496EtCRkKlo20X3OPnyPSB5tB5RPbhczc.
-Are you sure you want to continue connecting (yes/no)? yes
+![image](https://user-images.githubusercontent.com/96256687/147416394-b8c136eb-f8af-44eb-adab-addbbca31723.png)
 
-bandit14@bandit:/etc/bandit_pass$ cat /etc/bandit_pass/bandit14
+![image](https://user-images.githubusercontent.com/96256687/147416425-1d8abd11-5e09-4e2a-bf2b-f10de886454a.png)
+
 4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
+********************************
 
-bandit13@bandit:~$ ssh -i ./sskey.private bandit14@localhost
-Warning: Identity file ./sskey.private not accessible: No such file or directory.
-Could not create directory '/home/bandit13/.ssh'.
-The authenticity of host 'localhost (127.0.0.1)' can't be established.
-ECDSA key fingerprint is SHA256:98UL0ZWr85496EtCRkKlo20X3OPnyPSB5tB5RPbhczc.
-Are you sure you want to continue connecting (yes/no)? yes
-Failed to add the host to the list of known hosts (/home/bandit13/.ssh/known_hosts).
-This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
-
-bandit14@localhost's password: 4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
-
-bandit14@bandit:~$ whoami
-bandit14
-*************************
 **Bandit Level 14 → Level 15
 ----------------------------
 Level Goal
 
 The password for the next level can be retrieved by submitting the password of the current level to port 30000 on localhost.
+
 Commands you may need to solve this level
+
 ssh, telnet, nc, openssl, s_client, nmap
 
 Helpful Reading Material
-How the Internet works in 5 minutes (YouTube) (Not completely accurate, but good enough for beginners)
-IP Addresses
-IP Address on Wikipedia
-Localhost on Wikipedia
-Ports
-Port (computer networking) on Wikipedia
 
+How the Internet works in 5 minutes (YouTube) (Not completely accurate, but good enough for beginners)
+
+IP Addresses
+
+IP Address on Wikipedia
+
+Localhost on Wikipedia
+
+Ports
+
+Port (computer networking) on Wikipedia
 ****************************************
 
 Solution of level 14 -> 15
 
 ~$ ssh bandit.labs.overthewire.org -l bandit14 -p2220
-This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
 
 bandit14@bandit.labs.overthewire.org's password: 4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
 
-bandit14@bandit:~$ nc localhost  30000
-4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
-Correct!
+![image](https://user-images.githubusercontent.com/96256687/147416613-83504220-1b1e-4564-aefc-aed9ee61a5dd.png)
+
 BfMYroe26WYalil77FoDi9qh59eK5xNr
 ********************************
 
@@ -639,12 +478,14 @@ The password for the next level can be retrieved by submitting the password of t
 Helpful note: Getting “HEARTBEATING” and “Read R BLOCK”? Use -ign_eof and read the “CONNECTED COMMANDS” section in the manpage. Next to ‘R’ and ‘Q’, the ‘B’ command also works in this version of that command…
 
 Commands you may need to solve this level
+
 ssh, telnet, nc, openssl, s_client, nmap
 
 Helpful Reading Material
-Secure Socket Layer/Transport Layer Security on Wikipedia
-OpenSSL Cookbook - Testing with OpenSSL
 
+Secure Socket Layer/Transport Layer Security on Wikipedia
+
+OpenSSL Cookbook - Testing with OpenSSL
 **********************************************************
 
 Solution of level 15 -> 16
