@@ -475,7 +475,13 @@ Level Goal
 
 The password for the next level can be retrieved by submitting the password of the current level to port 30001 on localhost using SSL encryption.
 
-Helpful note: Getting “HEARTBEATING” and “Read R BLOCK”? Use -ign_eof and read the “CONNECTED COMMANDS” section in the manpage. Next to ‘R’ and ‘Q’, the ‘B’ command also works in this version of that command…
+Helpful note: 
+
+Getting “HEARTBEATING” and “Read R BLOCK”? 
+
+Use -ign_eof and read the “CONNECTED COMMANDS” section in the manpage. 
+
+Next to ‘R’ and ‘Q’, the ‘B’ command also works in this version of that command…
 
 Commands you may need to solve this level
 
@@ -496,239 +502,42 @@ bandit15@bandit.labs.overthewire.org's password: BfMYroe26WYalil77FoDi9qh59eK5xN
 
 #Execution option 1
 
-bandit15@bandit:~$ openssl s_client -connect localhost:30001
-
-CONNECTED(00000003)
-
-depth=0 CN = localhost
-
-verify error:num=18:self signed certificate
-
-verify return:1
-
-depth=0 CN = localhost
-
-verify return:1
----
-Certificate chain
-
- 0 s:/CN=localhost
- 
-   i:/CN=localhost
----
-Server certificate
-
------BEGIN CERTIFICATE-----
-
-MIICBjCCAW+gAwIBAgIEDU18oTANBgkqhkiG9w0BAQUFADAUMRIwEAYDVQQDDAls
-b2NhbGhvc3QwHhcNMjAwNTA3MTgxNTQzWhcNMjEwNTA3MTgxNTQzWjAUMRIwEAYD
-VQQDDAlsb2NhbGhvc3QwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAK3CPNFR
-FEypcqUa8NslmIMWl9xq53Cwhs/fvYHAvauyfE3uDVyyX79Z34Tkot6YflAoufnS
-+puh2Kgq7aDaF+xhE+FPcz1JE0C2bflGfEtx4l3qy79SRpLiZ7eio8NPasvduG5e
-pkuHefwI4c7GS6Y7OTz/6IpxqXBzv3c+x93TAgMBAAGjZTBjMBQGA1UdEQQNMAuC
-CWxvY2FsaG9zdDBLBglghkgBhvhCAQ0EPhY8QXV0b21hdGljYWxseSBnZW5lcmF0
-ZWQgYnkgTmNhdC4gU2VlIGh0dHBzOi8vbm1hcC5vcmcvbmNhdC8uMA0GCSqGSIb3
-DQEBBQUAA4GBAC9uy1rF2U/OSBXbQJYuPuzT5mYwcjEEV0XwyiX1MFZbKUlyFZUw
-rq+P1HfFp+BSODtk6tHM9bTz+p2OJRXuELG0ly8+Nf/hO/mYS1i5Ekzv4PL9hO8q
-PfmDXTHs23Tc7ctLqPRj4/4qxw6RF4SM+uxkAuHgT/NDW1LphxkJlKGn
-
------END CERTIFICATE-----
-
-subject=/CN=localhost
-
-issuer=/CN=localhost
----
-No client certificate CA names sent
-
-Peer signing digest: SHA512
-
-Server Temp Key: X25519, 253 bits
-
----
-SSL handshake has read 1019 bytes and written 269 bytes
-
-Verification error: self signed certificate
----
-New, TLSv1.2, Cipher is ECDHE-RSA-AES256-GCM-SHA384
-
-Server public key is 1024 bit
-
-Secure Renegotiation IS supported
-
-Compression: NONE
-
-Expansion: NONE
-
-No ALPN negotiated
-
-SSL-Session:
-
-    Protocol  : TLSv1.2
-    Cipher    : ECDHE-RSA-AES256-GCM-SHA384
-    Session-ID: 1193DFF01A55845B11DB75667AF8CC93F2CA944167D1FD003EFC26416CE83169
-    Session-ID-ctx: 
-    Master-Key: 57291BD42F3B3AD4F7D9AEB7875EB3404ED5E436F080B9A455EE09A66F6FE7A48EB828C203FAC81F7C2AAA863276B5BA
-    PSK identity: None
-    PSK identity hint: None
-    SRP username: None
-    TLS session ticket lifetime hint: 7200 (seconds)
-    TLS session ticket:
-    
-    0000 - aa 02 e6 3a 2e 0b c8 5d-6f 54 4a 1b 5a e0 2c 0e   ...:...]oTJ.Z.,.
-    0010 - 90 88 b6 5b 82 4a a0 69-ea d7 59 48 29 a4 57 b7   ...[.J.i..YH).W.
-    0020 - ec 43 df b8 12 b6 8c 0c-44 59 00 f5 c2 d1 33 fe   .C......DY....3.
-    0030 - b5 bc b2 b1 ad 67 e9 1f-84 12 66 16 52 ec d3 dc   .....g....f.R...
-    0040 - cf d1 86 ee fe a9 15 b0-56 57 66 43 3c 36 fe 12   ........VWfC<6..
-    0050 - d2 3e 89 90 62 8a 6b e4-7b ce ea 78 a0 96 69 bd   .>..b.k.{..x..i.
-    0060 - e7 a9 5e c1 5c ab fc 41-e3 0d 97 8e 0f 35 f0 5f   ..^.\..A.....5._
-    0070 - 3d 73 03 4a 6e 09 b8 6b-b3 71 60 06 3d 32 b7 b4   =s.Jn..k.q`.=2..
-    0080 - 72 11 b6 37 d3 cb 5c 73-2b b2 5a cd 6f 4d 3b 0e   r..7..\s+.Z.oM;.
-    0090 - 4c 0e 82 26 92 f4 ba 54-bb 32 0f 43 c7 8a fa b5   L..&...T.2.C....
-
-    Start Time: 1596046156
-    
-    Timeout   : 7200 (sec)
-    
-    Verify return code: 18 (self signed certificate)
-    
-    Extended master secret: yes
----
-BfMYroe26WYalil77FoDi9qh59eK5xNr
-
-Correct!
-
-cluFn7wTiGryunymYOu4RcffSxQluehd
-
-closed
+![image](https://user-images.githubusercontent.com/96256687/147494832-5d564399-fb99-4e5a-a218-79b79ad73fb6.png)
+![image](https://user-images.githubusercontent.com/96256687/147494904-dcd91e5c-831a-4f93-88db-6558b2fbc2e4.png)
 
 #Execution option 2
 
-bandit15@bandit:~$ openssl s_client -connect localhost:30001 -quiet
-depth=0 CN = localhost
-verify error:num=18:self signed certificate
-verify return:1
-depth=0 CN = localhost
-verify return:1
-BfMYroe26WYalil77FoDi9qh59eK5xNr
-Correct!
-cluFn7wTiGryunymYOu4RcffSxQluehd
+![image](https://user-images.githubusercontent.com/96256687/147495141-547ebe29-5bdf-45ff-9842-50e9cf77cb28.png)
 
 #Execution option 3
 
-bandit15@bandit:~$ cat /etc/bandit_pass/bandit15 | openssl s_client -connect localhost:30001 -quiet
-depth=0 CN = localhost
-verify error:num=18:self signed certificate
-verify return:1
-depth=0 CN = localhost
-verify return:1
-Correct!
-cluFn7wTiGryunymYOu4RcffSxQluehd
+![image](https://user-images.githubusercontent.com/96256687/147495228-55491470-f981-4e40-a7e5-a2c2b443b286.png)
 
 #Execution option 4
 
-bandit15@bandit:~$ echo BfMYroe26WYalil77FoDi9qh59eK5xNr | openssl s_client -quiet -connect localhost:30001
-depth=0 CN = localhost
-verify error:num=18:self signed certificate
-verify return:1
-depth=0 CN = localhost
-verify return:1
-Correct!
-cluFn7wTiGryunymYOu4RcffSxQluehd
+![image](https://user-images.githubusercontent.com/96256687/147495292-2ed17b65-9d44-4eb6-9db0-fda6af25052b.png)
 
 #Execution option 5
 
-bandit15@bandit:~$ openssl s_client -connect localhost:30001 -quiet < /etc/bandit_pass/bandit15
-depth=0 CN = localhost
-verify error:num=18:self signed certificate
-verify return:1
-depth=0 CN = localhost
-verify return:1
-Correct!
-cluFn7wTiGryunymYOu4RcffSxQluehd
+![image](https://user-images.githubusercontent.com/96256687/147495349-236d788b-8dfa-4d99-92f5-38ba42464d81.png)
 
 #Execution option 6
 
-bandit15@bandit:~$ openssl s_client -ign_eof -connect localhost:30001
-CONNECTED(00000003)
-depth=0 CN = localhost
-verify error:num=18:self signed certificate
-verify return:1
-depth=0 CN = localhost
-verify return:1
----
-Certificate chain
- 0 s:/CN=localhost
-   i:/CN=localhost
----
-Server certificate
------BEGIN CERTIFICATE-----
-MIICBjCCAW+gAwIBAgIEDU18oTANBgkqhkiG9w0BAQUFADAUMRIwEAYDVQQDDAls
-b2NhbGhvc3QwHhcNMjAwNTA3MTgxNTQzWhcNMjEwNTA3MTgxNTQzWjAUMRIwEAYD
-VQQDDAlsb2NhbGhvc3QwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAK3CPNFR
-FEypcqUa8NslmIMWl9xq53Cwhs/fvYHAvauyfE3uDVyyX79Z34Tkot6YflAoufnS
-+puh2Kgq7aDaF+xhE+FPcz1JE0C2bflGfEtx4l3qy79SRpLiZ7eio8NPasvduG5e
-pkuHefwI4c7GS6Y7OTz/6IpxqXBzv3c+x93TAgMBAAGjZTBjMBQGA1UdEQQNMAuC
-CWxvY2FsaG9zdDBLBglghkgBhvhCAQ0EPhY8QXV0b21hdGljYWxseSBnZW5lcmF0
-ZWQgYnkgTmNhdC4gU2VlIGh0dHBzOi8vbm1hcC5vcmcvbmNhdC8uMA0GCSqGSIb3
-DQEBBQUAA4GBAC9uy1rF2U/OSBXbQJYuPuzT5mYwcjEEV0XwyiX1MFZbKUlyFZUw
-rq+P1HfFp+BSODtk6tHM9bTz+p2OJRXuELG0ly8+Nf/hO/mYS1i5Ekzv4PL9hO8q
-PfmDXTHs23Tc7ctLqPRj4/4qxw6RF4SM+uxkAuHgT/NDW1LphxkJlKGn
------END CERTIFICATE-----
-subject=/CN=localhost
-issuer=/CN=localhost
----
-No client certificate CA names sent
-Peer signing digest: SHA512
-Server Temp Key: X25519, 253 bits
----
-SSL handshake has read 1019 bytes and written 269 bytes
-Verification error: self signed certificate
----
-New, TLSv1.2, Cipher is ECDHE-RSA-AES256-GCM-SHA384
-Server public key is 1024 bit
-Secure Renegotiation IS supported
-Compression: NONE
-Expansion: NONE
-No ALPN negotiated
-SSL-Session:
-    Protocol  : TLSv1.2
-    Cipher    : ECDHE-RSA-AES256-GCM-SHA384
-    Session-ID: A045B0172FE570D9C9CFB8CAD1B177BE2E172C5E0ED53F191C7529F6D9E76960
-    Session-ID-ctx: 
-    Master-Key: AA0A89D7377B7AFE611FC9B5531BAE757D30E1EC7EFD36148882DBBBC9772AF030DFEAB6B208242A38DD934E3A257CDE
-    PSK identity: None
-    PSK identity hint: None
-    SRP username: None
-    TLS session ticket lifetime hint: 7200 (seconds)
-    TLS session ticket:
-    0000 - aa 02 e6 3a 2e 0b c8 5d-6f 54 4a 1b 5a e0 2c 0e   ...:...]oTJ.Z.,.
-    0010 - 6e b4 28 f1 be 5e 39 c9-61 f3 d8 aa 16 99 78 81   n.(..^9.a.....x.
-    0020 - de 7e 5f 85 38 34 95 bc-fa 1c cc 6f 28 42 f0 0f   .~_.84.....o(B..
-    0030 - e8 87 16 dd d8 46 39 52-ba fa a7 a5 cc cf 8d 78   .....F9R.......x
-    0040 - cd f6 e1 19 a7 3a dc 41-38 55 c3 ba b5 fa 16 09   .....:.A8U......
-    0050 - b8 7f e8 b7 a2 81 fb 7c-d5 50 3b df 42 f2 b9 ab   .......|.P;.B...
-    0060 - a3 54 c7 06 a7 b8 43 3e-63 e8 bb 1d 66 8a 1b 34   .T....C>c...f..4
-    0070 - 35 ca 45 22 77 40 d3 94-54 3a 23 49 a7 b0 6b 84   5.E"w@..T:#I..k.
-    0080 - f6 3c d4 44 2d e7 99 ad-78 10 a1 a7 f2 50 90 14   .<.D-...x....P..
-    0090 - 56 b1 85 5e e8 59 d9 99-e2 04 54 50 48 e1 67 67   V..^.Y....TPH.gg
+![image](https://user-images.githubusercontent.com/96256687/147495478-cdba8769-7a94-48a9-bf78-c7b6ad906425.png)
+![image](https://user-images.githubusercontent.com/96256687/147495514-35497cec-f7d5-4b81-beee-e5ebc3787b83.png)
 
-    Start Time: 1596046981
-    Timeout   : 7200 (sec)
-    Verify return code: 18 (self signed certificate)
-    Extended master secret: yes
----
-BfMYroe26WYalil77FoDi9qh59eK5xNr
-Correct!
 cluFn7wTiGryunymYOu4RcffSxQluehd
-
-closed
-********************************
+*********************************
 
 **Bandit Level 16 → Level 17
 ----------------------------
 Level Goal
 
-The credentials for the next level can be retrieved by submitting the password of the current level to a port on localhost in the range 31000 to 32000. First find out which of these ports have a server listening on them. Then find out which of those speak SSL and which don’t. There is only 1 server that will give the next credentials, the others will simply send back to you whatever you send to it.
+The credentials for the next level can be retrieved by submitting the password of the current level to a port on localhost in the range 31000 to 32000. 
+
+First find out which of these ports have a server listening on them. Then find out which of those speak SSL and which don’t. 
+
+There is only 1 server that will give the next credentials, the others will simply send back to you whatever you send to it.
 
 Commands you may need to solve this level
 
@@ -747,122 +556,20 @@ bandit16@bandit.labs.overthewire.org's password: cluFn7wTiGryunymYOu4RcffSxQlueh
 
 bandit16@bandit:~$ nmap localhost 
 
-Starting Nmap 7.40 ( https://nmap.org ) at 2020-07-29 20:55 CEST
-Nmap scan report for localhost (127.0.0.1)
-Host is up (0.00027s latency).
-Not shown: 997 closed ports
-PORT      STATE SERVICE
-22/tcp    open  ssh
-113/tcp   open  ident
-30000/tcp open  ndmps
+![image](https://user-images.githubusercontent.com/96256687/147496634-7873ec57-49ce-43b9-a30e-8cb1383a16b0.png)
 
-Nmap done: 1 IP address (1 host up) scanned in 0.10 seconds
+![image](https://user-images.githubusercontent.com/96256687/147496709-9cf25e2a-0a4f-454e-94dd-1fae12b2b7ad.png)
 
-bandit16@bandit:~$ nmap localhost -p 31000-32000
+![image](https://user-images.githubusercontent.com/96256687/147496953-247e884d-3aaf-455c-957d-3dfd417946a8.png)
 
-Starting Nmap 7.40 ( https://nmap.org ) at 2020-07-29 20:56 CEST
-Nmap scan report for localhost (127.0.0.1)
-Host is up (0.00043s latency).
-Not shown: 996 closed ports
-PORT      STATE SERVICE
-31046/tcp open  unknown
-31518/tcp open  unknown
-31691/tcp open  unknown
-31790/tcp open  unknown
-31960/tcp open  unknown
-
-Nmap done: 1 IP address (1 host up) scanned in 0.10 seconds
-
-bandit16@bandit:~$ nmap localhost -p31000-32000 -sV
-
-Starting Nmap 7.40 ( https://nmap.org ) at 2020-07-29 20:58 CEST
-Nmap scan report for localhost (127.0.0.1)
-Host is up (0.00034s latency).
-Not shown: 996 closed ports
-PORT      STATE SERVICE     VERSION
-31046/tcp open  echo
-31518/tcp open  ssl/echo
-31691/tcp open  echo
-31790/tcp open  ssl/unknown
-31960/tcp open  echo
-1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
-SF-Port31790-TCP:V=7.40%T=SSL%I=7%D=7/29%Time=5F21C6D2%P=x86_64-pc-linux-g
-SF:nu%r(GenericLines,31,"Wrong!\x20Please\x20enter\x20the\x20correct\x20cu
-SF:rrent\x20password\n")%r(GetRequest,31,"Wrong!\x20Please\x20enter\x20the
-SF:\x20correct\x20current\x20password\n")%r(HTTPOptions,31,"Wrong!\x20Plea
-SF:se\x20enter\x20the\x20correct\x20current\x20password\n")%r(RTSPRequest,
-SF:31,"Wrong!\x20Please\x20enter\x20the\x20correct\x20current\x20password\
-SF:n")%r(Help,31,"Wrong!\x20Please\x20enter\x20the\x20correct\x20current\x
-SF:20password\n")%r(SSLSessionReq,31,"Wrong!\x20Please\x20enter\x20the\x20
-SF:correct\x20current\x20password\n")%r(TLSSessionReq,31,"Wrong!\x20Please
-SF:\x20enter\x20the\x20correct\x20current\x20password\n")%r(Kerberos,31,"W
-SF:rong!\x20Please\x20enter\x20the\x20correct\x20current\x20password\n")%r
-SF:(FourOhFourRequest,31,"Wrong!\x20Please\x20enter\x20the\x20correct\x20c
-SF:urrent\x20password\n")%r(LPDString,31,"Wrong!\x20Please\x20enter\x20the
-SF:\x20correct\x20current\x20password\n")%r(LDAPSearchReq,31,"Wrong!\x20Pl
-SF:ease\x20enter\x20the\x20correct\x20current\x20password\n")%r(SIPOptions
-SF:,31,"Wrong!\x20Please\x20enter\x20the\x20correct\x20current\x20password
-SF:\n");
-
-Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-Nmap done: 1 IP address (1 host up) scanned in 88.85 seconds
-
-bandit16@bandit:~$ openssl s_client -connect localhost:31790 -quiet
-depth=0 CN = localhost
-verify error:num=18:self signed certificate
-verify return:1
-depth=0 CN = localhost
-verify return:1
-cluFn7wTiGryunymYOu4RcffSxQluehd
-Correct!
------BEGIN RSA PRIVATE KEY-----
-MIIEogIBAAKCAQEAvmOkuifmMg6HL2YPIOjon6iWfbp7c3jx34YkYWqUH57SUdyJ
-imZzeyGC0gtZPGujUSxiJSWI/oTqexh+cAMTSMlOJf7+BrJObArnxd9Y7YT2bRPQ
-Ja6Lzb558YW3FZl87ORiO+rW4LCDCNd2lUvLE/GL2GWyuKN0K5iCd5TbtJzEkQTu
-DSt2mcNn4rhAL+JFr56o4T6z8WWAW18BR6yGrMq7Q/kALHYW3OekePQAzL0VUYbW
-JGTi65CxbCnzc/w4+mqQyvmzpWtMAzJTzAzQxNbkR2MBGySxDLrjg0LWN6sK7wNX
-x0YVztz/zbIkPjfkU1jHS+9EbVNj+D1XFOJuaQIDAQABAoIBABagpxpM1aoLWfvD
-KHcj10nqcoBc4oE11aFYQwik7xfW+24pRNuDE6SFthOar69jp5RlLwD1NhPx3iBl
-J9nOM8OJ0VToum43UOS8YxF8WwhXriYGnc1sskbwpXOUDc9uX4+UESzH22P29ovd
-d8WErY0gPxun8pbJLmxkAtWNhpMvfe0050vk9TL5wqbu9AlbssgTcCXkMQnPw9nC
-YNN6DDP2lbcBrvgT9YCNL6C+ZKufD52yOQ9qOkwFTEQpjtF4uNtJom+asvlpmS8A
-vLY9r60wYSvmZhNqBUrj7lyCtXMIu1kkd4w7F77k+DjHoAXyxcUp1DGL51sOmama
-+TOWWgECgYEA8JtPxP0GRJ+IQkX262jM3dEIkza8ky5moIwUqYdsx0NxHgRRhORT
-8c8hAuRBb2G82so8vUHk/fur85OEfc9TncnCY2crpoqsghifKLxrLgtT+qDpfZnx
-SatLdt8GfQ85yA7hnWWJ2MxF3NaeSDm75Lsm+tBbAiyc9P2jGRNtMSkCgYEAypHd
-HCctNi/FwjulhttFx/rHYKhLidZDFYeiE/v45bN4yFm8x7R/b0iE7KaszX+Exdvt
-SghaTdcG0Knyw1bpJVyusavPzpaJMjdJ6tcFhVAbAjm7enCIvGCSx+X3l5SiWg0A
-R57hJglezIiVjv3aGwHwvlZvtszK6zV6oXFAu0ECgYAbjo46T4hyP5tJi93V5HDi
-Ttiek7xRVxUl+iU7rWkGAXFpMLFteQEsRr7PJ/lemmEY5eTDAFMLy9FL2m9oQWCg
-R8VdwSk8r9FGLS+9aKcV5PI/WEKlwgXinB3OhYimtiG2Cg5JCqIZFHxD6MjEGOiu
-L8ktHMPvodBwNsSBULpG0QKBgBAplTfC1HOnWiMGOU3KPwYWt0O6CdTkmJOmL8Ni
-blh9elyZ9FsGxsgtRBXRsqXuz7wtsQAgLHxbdLq/ZJQ7YfzOKU4ZxEnabvXnvWkU
-YOdjHdSOoKvDQNWu6ucyLRAWFuISeXw9a/9p7ftpxm0TSgyvmfLF2MIAEwyzRqaM
-77pBAoGAMmjmIJdjp+Ez8duyn3ieo36yrttF5NSsJLAbxFpdlc1gvtGCWW+9Cq0b
-dxviW8+TFVEBl1O4f7HVm6EpTscdDxU+bCXWkfjuRb7Dy9GOtt9JPsX8MBTakzh3
-vBgsyi/sN3RqRBcGU40fOoZyfAMT8s1m/uYv52O6IgeuZ/ujbjY=
------END RSA PRIVATE KEY-----
+![image](https://user-images.githubusercontent.com/96256687/147497038-3bd10b07-315f-4c19-ad3a-ede6821a60d7.png)
 
 #Execution option 2
 
-bandit16@bandit:~$ cd /tmp/
-bandit16@bandit:/tmp$ mkdir bandit17
-bandit16@bandit:~$ cat /etc/bandit_pass/bandit16 | openssl s_client -connect localhost:31790 -quiet > /tmp/bandit17/bandit17.key
-depth=0 CN = localhost
-verify error:num=18:self signed certificate
-verify return:1
-depth=0 CN = localhost
-verify return:1
-bandit16@bandit:~$ ls /tmp/bandit17/
-bandit17.key
-bandit16@bandit:~$ chmod 600 /tmp/bandit17/bandit17.key
-bandit16@bandit:~$ ssh -i /tmp/bandit17/bandit17.key bandit17@localhost 
-Could not create directory '/home/bandit16/.ssh'.
-The authenticity of host 'localhost (127.0.0.1)' can't be established.
-ECDSA key fingerprint is SHA256:98UL0ZWr85496EtCRkKlo20X3OPnyPSB5tB5RPbhczc.
-Are you sure you want to continue connecting (yes/no)? yes
+![image](https://user-images.githubusercontent.com/96256687/147497832-006d5676-de33-4c31-a0f5-5832ab5ac55b.png)
 
-bandit17@bandit:~$ cat /etc/bandit_pass/bandit17 
+![image](https://user-images.githubusercontent.com/96256687/147497875-db192a6a-4b0e-49ca-b9f9-ef3a6af30d0c.png)
+
 xLYVMN9WE5zQ5vHacb0sZEVqbrp7nBTn
 ************************************************
 
@@ -870,7 +577,9 @@ xLYVMN9WE5zQ5vHacb0sZEVqbrp7nBTn
 ----------------------------
 Level Goal
 
-There are 2 files in the homedirectory: passwords.old and passwords.new. The password for the next level is in passwords.new and is the only line that has been changed between passwords.old and passwords.new
+There are 2 files in the homedirectory: passwords.old and passwords.new. 
+
+The password for the next level is in passwords.new and is the only line that has been changed between passwords.old and passwords.new
 
 NOTE: if you have solved this level and see ‘Byebye!’ when trying to log into bandit18, this is related to the next level, bandit19
 
@@ -885,60 +594,42 @@ Solution of level 17 -> 18
 
 bandit17@bandit.labs.overthewire.org's password: xLYVMN9WE5zQ5vHacb0sZEVqbrp7nBTn
 
-#Execution option 1
+#Execution option 1-2
 
-bandit17@bandit:~$ ls
-passwords.new  passwords.old
-bandit17@bandit:~$ diff passwords.new passwords.old 
-42c42
-< kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
----
-> w0Yfolrc5bwjS4qw5mq1nnQi6mF03bii
+![image](https://user-images.githubusercontent.com/96256687/147498430-0c65cf39-4472-4b4a-8d09-d302c7252575.png)
 
-#execution option 2
-
-bandit17@bandit:~$ grep -vf passwords.old passwords.new
 kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
 ********************************
+
 **Bandit Level 18 → Level 19
 ----------------------------
 Level Goal
 
-The password for the next level is stored in a file readme in the homedirectory. Unfortunately, someone has modified .bashrc to log you out when you log in with SSH.
+The password for the next level is stored in a file readme in the homedirectory. 
+
+Unfortunately, someone has modified .bashrc to log you out when you log in with SSH.
 
 Commands you may need to solve this level
-ssh, ls, cat
 
+ssh, ls, cat
 *****************************************
 
 Solution of leve 18 -> 19
 
 #Execution optoin 1
 
-~$ ssh bandit.labs.overthewire.org -l bandit18 -p2220 "cat readme"
-This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
+![image](https://user-images.githubusercontent.com/96256687/147498726-f471a64c-bb09-43c5-a7bf-e8eb920a497d.png)
 
 bandit18@bandit.labs.overthewire.org's password: kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
-IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
 
 #Execution optoin 2
 
-~$ ssh bandit.labs.overthewire.org -l bandit18 -p2220 cat "readme" > password
-This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
-
-bandit18@bandit.labs.overthewire.org's password: kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
-kali@kali:~$ cat password 
-IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
+![image](https://user-images.githubusercontent.com/96256687/147498850-0ae2093f-23cc-4476-98df-0172a9d060f6.png)
 
 #Execution option 3
 
-~$ ssh -t bandit18@bandit.labs.overthewire.org -p2220  /bin/sh
-This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
+![image](https://user-images.githubusercontent.com/96256687/147498969-4d97cf40-7016-4dd4-965f-60eafcea7703.png)
 
-bandit18@bandit.labs.overthewire.org's password: 
-$ ls
-readme
-$ cat readme    
 IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
 ********************************
 
@@ -946,11 +637,15 @@ IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
 ----------------------------
 Level Goal
 
-To gain access to the next level, you should use the setuid binary in the homedirectory. Execute it without arguments to find out how to use it. The password for this level can be found in the usual place (/etc/bandit_pass), after you have used the setuid binary.
+To gain access to the next level, you should use the setuid binary in the homedirectory. 
+
+Execute it without arguments to find out how to use it. 
+
+The password for this level can be found in the usual place (/etc/bandit_pass), after you have used the setuid binary.
 
 Helpful Reading Material
-setuid on Wikipedia
 
+setuid on Wikipedia
 ************************
 
 Solution of level 19 -> 20
