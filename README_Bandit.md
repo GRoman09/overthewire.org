@@ -651,25 +651,11 @@ setuid on Wikipedia
 Solution of level 19 -> 20
 
 ~$ ssh bandit.labs.overthewire.org -l bandit19 -p2220
-This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
 
 bandit19@bandit.labs.overthewire.org's password: IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
 
-bandit19@bandit:~$ ls -l
-total 8
--rwsr-x--- 1 bandit20 bandit19 7296 May  7 20:14 bandit20-do
+![image](https://user-images.githubusercontent.com/96256687/147855987-a7109ce8-0bca-4212-b74c-98eeaaadc60a.png)
 
-bandit19@bandit:~$ file bandit20-do 
-bandit20-do: setuid ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux.so.2, for GNU/Linux 2.6.32, BuildID[sha1]=8e941f24b8c5cd0af67b22b724c57e1ab92a92a1, not stripped
-
-bandit19@bandit:~$ ./bandit20-do id
-uid=11019(bandit19) gid=11019(bandit19) euid=11020(bandit20) groups=11019(bandit19)
-
-bandit19@bandit:~$ ./bandit20-do 
-Run a command as another user.
-  Example: ./bandit20-do id
-
-bandit19@bandit:~$ ./bandit20-do cat /etc/bandit_pass/bandit20
 GbKksEFF4yrVs6il55v6gwY5aVje5f0j
 ********************************
 
@@ -677,81 +663,52 @@ GbKksEFF4yrVs6il55v6gwY5aVje5f0j
 ----------------------------
 Level Goal
 
-There is a setuid binary in the homedirectory that does the following: it makes a connection to localhost on the port you specify as a commandline argument. It then reads a line of text from the connection and compares it to the password in the previous level (bandit20). If the password is correct, it will transmit the password for the next level (bandit21).
+There is a setuid binary in the homedirectory that does the following: it makes a connection to localhost on the port you specify as a commandline argument. 
+
+It then reads a line of text from the connection and compares it to the password in the previous level (bandit20). 
+
+If the password is correct, it will transmit the password for the next level (bandit21).
 
 NOTE: Try connecting to your own network daemon to see if it works as you think
 
 Commands you may need to solve this level
-ssh, nc, cat, bash, screen, tmux, Unix ‘job control’ (bg, fg, jobs, &, CTRL-Z, …)
 
+ssh, nc, cat, bash, screen, tmux, Unix ‘job control’ (bg, fg, jobs, &, CTRL-Z, …)
 **********************************************************************************
 
 ~$ ssh bandit.labs.overthewire.org -l bandit20 -p2220
-This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
 
 bandit20@bandit.labs.overthewire.org's password: GbKksEFF4yrVs6il55v6gwY5aVje5f0j
 
 #Execution option 1
-bandit20@bandit:~$ ls -la
-total 32
-drwxr-xr-x  2 root     root      4096 May  7 20:14 .
-drwxr-xr-x 41 root     root      4096 May  7 20:14 ..
--rw-r--r--  1 root     root       220 May 15  2017 .bash_logout
--rw-r--r--  1 root     root      3526 May 15  2017 .bashrc
--rw-r--r--  1 root     root       675 May 15  2017 .profile
--rwsr-x---  1 bandit21 bandit20 12088 May  7 20:14 suconnect
 
-bandit20@bandit:~$ file suconnect 
-suconnect: setuid ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux.so.2, for GNU/Linux 2.6.32, BuildID[sha1]=74c0f6dc184e0412b6dc52e542782f43807268e1, not stripped
-
-bandit20@bandit:~$ ps aux
-USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
-bandit20  2899  0.0  0.1  21180  5020 pts/35   Ss   19:33   0:00 -bash
-bandit20  3658  0.0  0.0  19328  3004 pts/35   S+   19:35   0:00 tmux
-bandit20  3659  0.0  0.1  21188  4952 pts/7    Ss+  19:35   0:00 -bash
-bandit20 14041  0.0  0.1  21148  4860 pts/84   Ss   19:55   0:00 -bash
-bandit20 14392  0.0  0.1  21148  4860 pts/90   Ss+  19:56   0:00 -bash
-bandit20 15566  0.0  0.0  19188  2484 pts/84   R+   19:59   0:00 ps aux
-bandit20 18794  0.0  0.1  21148  5048 pts/60   Ss+  18:58   0:00 -bash
-bandit20 22445  0.0  0.0  28168  3440 ?        Ss   19:08   0:00 tmux
-bandit20 29827  0.0  0.1  21148  5032 pts/67   Ss   19:22   0:00 -bash
-bandit20 32263  0.0  0.1  46640  5616 pts/67   S+   19:27   0:00 ssh bandit21@localhost
-
-bandit20@bandit:~$ echo "GbKksEFF4yrVs6il55v6gwY5aVje5f0j" | nc -l localhost -p12345 &
-[1] 16857
-bandit20@bandit:~$ ./suconnect 12345
-Read: GbKksEFF4yrVs6il55v6gwY5aVje5f0j
-Password matches, sending next password
-gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr
-[1]+  Done                    echo "GbKksEFF4yrVs6il55v6gwY5aVje5f0j" | nc -l localhost -p12345
+![image](https://user-images.githubusercontent.com/96256687/147856370-1288b517-aefc-4394-81a8-e9ad6bdf5441.png)
 
 
 
 #Execution option 2
-> terminal_1
-bandit20@bandit:~$ nc -vlp 12345 < /etc/bandit_pass/bandit20
-listening on [any] 12345 ...
-connect to [127.0.0.1] from localhost [127.0.0.1] 49062
-gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr
 
-> terminal_2
-bandit20@bandit:~$ ./suconnect 12345
-Read: GbKksEFF4yrVs6il55v6gwY5aVje5f0j
-Password matches, sending next password
+![image](https://user-images.githubusercontent.com/96256687/147856489-c1ec4c66-21d8-4e22-8db1-eaf24f5850d5.png)
+
+gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr
 ***************************************
-Bandit Level 21 → Level 22
+
+**Bandit Level 21 → Level 22
+----------------------------
 Level Goal
-A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed.
+
+A program is running automatically at regular intervals from cron, the time-based job scheduler. 
+
+Look in /etc/cron.d/ for the configuration and see what command is being executed.
 
 Commands you may need to solve this level
-cron, crontab, crontab(5) (use “man 5 crontab” to access this)
 
+cron, crontab, crontab(5) (use “man 5 crontab” to access this)
 **************************************************************
 
 Solution of level 21 -> 22
 
 ~$ ssh bandit.labs.overthewire.org -l bandit21 -p2220
-This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
 
 bandit21@bandit.labs.overthewire.org's password: gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr
 
@@ -782,19 +739,24 @@ Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
 ----------------------------
 Level Goal
 
-A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed.
+A program is running automatically at regular intervals from cron, the time-based job scheduler. 
 
-NOTE: Looking at shell scripts written by other people is a very useful skill. The script for this level is intentionally made easy to read. If you are having problems understanding what it does, try executing it to see the debug information it prints.
+Look in /etc/cron.d/ for the configuration and see what command is being executed.
+
+NOTE: Looking at shell scripts written by other people is a very useful skill. 
+
+The script for this level is intentionally made easy to read.
+
+If you are having problems understanding what it does, try executing it to see the debug information it prints.
 
 Commands you may need to solve this level
-cron, crontab, crontab(5) (use “man 5 crontab” to access this)
 
+cron, crontab, crontab(5) (use “man 5 crontab” to access this)
 **************************************************************
 
 Solution of level 22 -> 23
 
 ~$ ssh bandit.labs.overthewire.org -l bandit22 -p2220
-This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
 
 bandit22@bandit.labs.overthewire.org's password: Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
 
@@ -822,21 +784,24 @@ jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
 ----------------------------
 Level Goal
 
-A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed.
+A program is running automatically at regular intervals from cron, the time-based job scheduler. 
 
-NOTE: This level requires you to create your own first shell-script. This is a very big step and you should be proud of yourself when you beat this level!
+Look in /etc/cron.d/ for the configuration and see what command is being executed.
+
+NOTE: This level requires you to create your own first shell-script. 
+
+This is a very big step and you should be proud of yourself when you beat this level!
 
 NOTE 2: Keep in mind that your shell script is removed once executed, so you may want to keep a copy around…
 
 Commands you may need to solve this level
-cron, crontab, crontab(5) (use “man 5 crontab” to access this)
 
+cron, crontab, crontab(5) (use “man 5 crontab” to access this)
 **************************************************************
 
 Solution of level 23 -> 24
 
 ~$ ssh bandit.labs.overthewire.org -l bandit23 -p2220
-This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
 
 bandit23@bandit.labs.overthewire.org''s password: jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
 
@@ -917,14 +882,14 @@ UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
 ----------------------------
 Level Goal
 
-A daemon is listening on port 30002 and will give you the password for bandit25 if given the password for bandit24 and a secret numeric 4-digit pincode. There is no way to retrieve the pincode except by going through all of the 10000 combinations, called brute-forcing.
+A daemon is listening on port 30002 and will give you the password for bandit25 if given the password for bandit24 and a secret numeric 4-digit pincode. 
 
+There is no way to retrieve the pincode except by going through all of the 10000 combinations, called brute-forcing.
 ***************************************************************************************
 
 Solution of level 24 -> 25
 
 kali@kali:~$ ssh bandit.labs.overthewire.org -l bandit24 -p2220
-This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
 
 bandit24@bandit.labs.overthewire.org''s password: UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
 
