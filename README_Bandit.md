@@ -778,6 +778,7 @@ bandit23@bandit.labs.overthewire.org''s password: jc1udXuA1tiHqjIsL8yaapX5XIAI6i
 #!/bin/bash
 
 cat /etc/bandit_pass/bandit24 > /tmp/secttp/password2
+
 ------------------------------------------------------
 
 ![image](https://user-images.githubusercontent.com/96256687/147884361-79eefb81-8d5b-46b8-bd8d-ceaa182d04ee.png)
