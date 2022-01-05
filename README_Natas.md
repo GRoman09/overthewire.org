@@ -20,8 +20,8 @@ Looking at the source text of the page
 The password for natas1 is gtVrDuiDfck831PqWsLEZy5gyDz1clto
 ***********************************************************
 
-**Natas Level 0 - 1
--------------------
+**Natas Level 0 → Level 1
+-------------------------
 
 Username: natas1
 
@@ -35,6 +35,17 @@ URL:      http://natas1.natas.labs.overthewire.org
 I press hotkeys to view the source text of the page (Ctrl+U)
 
 ![image](https://user-images.githubusercontent.com/96256687/148261815-bb01a45b-bea5-474a-973f-1fecf24a53ab.png)
+
+The password for natas2 is ZluruAthQk7Q2MqmDeTiUij2ZvWy2mBi
+***********************************************************
+
+**Natas Level 1 → Level 2
+-------------------------
+Username: natas2
+
+Password: ZluruAthQk7Q2MqmDeTiUij2ZvWy2mBi
+
+URL:      http://natas2.natas.labs.overthewire.org
 
 
 
