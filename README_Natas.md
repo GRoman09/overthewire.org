@@ -68,9 +68,26 @@ Password: sJIJNW6ucpu6HPZ1ZAchaDtwd7oGrD14
 
 URL:      http://natas3.natas.labs.overthewire.org
 
+![image](https://user-images.githubusercontent.com/96256687/148348900-15567bca-9f9c-4901-b26c-9811b0699532.png)
 
+![image](https://user-images.githubusercontent.com/96256687/148349642-d53e9e2c-3719-40d2-8bc9-4feb52318357.png)
 
+![image](https://user-images.githubusercontent.com/96256687/148349910-75d68727-c922-4244-bc19-4db24e00072d.png)
 
+![image](https://user-images.githubusercontent.com/96256687/148350039-080f2e6e-600a-4e3b-96a8-19d3fa67d9c4.png)
+
+natas4:Z9tkRkWmpt9Qr7XrR5jWRkgOU901swEZ
+***************************************
+
+**Natas Level 3 → Level 4
+-------------------------
+Username: natas4
+
+Password: Z9tkRkWmpt9Qr7XrR5jWRkgOU901swEZ
+
+URL:      http://natas4.natas.labs.overthewire.org
+
+![image](https://user-images.githubusercontent.com/96256687/148354969-fe69cf96-4c8f-4ad1-bb46-d0f700f68401.png)
 
 
 
