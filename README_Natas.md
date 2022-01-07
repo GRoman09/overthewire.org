@@ -89,6 +89,8 @@ URL:      http://natas4.natas.labs.overthewire.org
 
 ![image](https://user-images.githubusercontent.com/96256687/148354969-fe69cf96-4c8f-4ad1-bb46-d0f700f68401.png)
 
+![image](https://user-images.githubusercontent.com/96256687/148569417-8b72eed3-b2b0-4ba3-88d8-8c135445e5fc.png)
+
 ![image](https://user-images.githubusercontent.com/96256687/148568604-9f4ce5f4-c8b7-4bea-b12b-27d3dd1367f7.png)
 
 ![image](https://user-images.githubusercontent.com/96256687/148566839-7cd180c6-fccf-465a-93ab-ab20ebe0f9ab.png)
