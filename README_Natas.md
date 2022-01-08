@@ -108,6 +108,8 @@ URL:      http://natas5.natas.labs.overthewire.org
 
 ![изображение](https://user-images.githubusercontent.com/96256687/148652840-79467dcc-3901-423b-a8ae-e806faaa7fd1.png)
 
+![изображение](https://user-images.githubusercontent.com/96256687/148653273-ea1f9f60-ae74-4cc2-9940-e0674db7683e.png)
+
 ![изображение](https://user-images.githubusercontent.com/96256687/148653058-401129a3-af32-4472-824a-d92ef4642c3d.png)
 
 
