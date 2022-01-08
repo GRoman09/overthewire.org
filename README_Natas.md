@@ -112,6 +112,9 @@ URL:      http://natas5.natas.labs.overthewire.org
 
 ![изображение](https://user-images.githubusercontent.com/96256687/148653058-401129a3-af32-4472-824a-d92ef4642c3d.png)
 
+Access granted. The password for natas6 is aGoY4q2Dc6MgDq4oL4YtoKtyAg9PeHa1
+***************************************************************************
+
 
 
 
