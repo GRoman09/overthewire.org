@@ -96,6 +96,19 @@ URL:      http://natas4.natas.labs.overthewire.org
 ![image](https://user-images.githubusercontent.com/96256687/148566839-7cd180c6-fccf-465a-93ab-ab20ebe0f9ab.png)
 
 Access granted. The password for natas5 is iX6IOfmpN7AYOQGPwtn3fXpbaJVJcHfq
+***************************************************************************
+
+**Natas Level 4 → Level 5
+-----------------------
+Username: natas5
+
+Password: iX6IOfmpN7AYOQGPwtn3fXpbaJVJcHfq
+
+URL:      http://natas5.natas.labs.overthewire.org
+
+![изображение](https://user-images.githubusercontent.com/96256687/148652840-79467dcc-3901-423b-a8ae-e806faaa7fd1.png)
+
+![изображение](https://user-images.githubusercontent.com/96256687/148653058-401129a3-af32-4472-824a-d92ef4642c3d.png)
 
 
 
