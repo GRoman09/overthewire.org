@@ -99,7 +99,7 @@ Access granted. The password for natas5 is iX6IOfmpN7AYOQGPwtn3fXpbaJVJcHfq
 ***************************************************************************
 
 **Natas Level 4 → Level 5
------------------------
+-------------------------
 Username: natas5
 
 Password: iX6IOfmpN7AYOQGPwtn3fXpbaJVJcHfq
@@ -113,6 +113,25 @@ URL:      http://natas5.natas.labs.overthewire.org
 ![изображение](https://user-images.githubusercontent.com/96256687/148653058-401129a3-af32-4472-824a-d92ef4642c3d.png)
 
 Access granted. The password for natas6 is aGoY4q2Dc6MgDq4oL4YtoKtyAg9PeHa1
+***************************************************************************
+
+**Natas Level 5 → Level 6
+-------------------------
+Username: natas6
+
+Password: aGoY4q2Dc6MgDq4oL4YtoKtyAg9PeHa1
+
+URL:      http://natas6.natas.labs.overthewire.org
+
+![изображение](https://user-images.githubusercontent.com/96256687/148814236-3a318f78-7b3f-4fc6-a620-3dc2bd2c436c.png)
+
+![изображение](https://user-images.githubusercontent.com/96256687/148815821-3ec2365d-cb29-4d9a-9860-01784fbc137f.png)
+
+![изображение](https://user-images.githubusercontent.com/96256687/148815585-6df324fe-54f9-4544-b835-cc3981f792fa.png)
+
+![изображение](https://user-images.githubusercontent.com/96256687/148815694-c02cecd8-99cf-4718-81c5-11a95b993f50.png)
+
+Access granted. The password for natas7 is 7z3hEENjQtflzgnT29q7wAvMNfZdh0i9
 ***************************************************************************
 
 
