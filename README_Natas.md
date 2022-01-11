@@ -134,6 +134,27 @@ URL:      http://natas6.natas.labs.overthewire.org
 Access granted. The password for natas7 is 7z3hEENjQtflzgnT29q7wAvMNfZdh0i9
 ***************************************************************************
 
+**Natas Level 6 → Level 7
+-------------------------
+Username: natas7
+
+Password: 7z3hEENjQtflzgnT29q7wAvMNfZdh0i9
+
+URL:      http://natas7.natas.labs.overthewire.org
+
+![изображение](https://user-images.githubusercontent.com/96256687/149000432-5d5e1627-24c3-4ca5-8504-f3a2c6180872.png)
+
+![изображение](https://user-images.githubusercontent.com/96256687/149000619-3c4d46df-f4f5-4f93-b383-9648ea92eefa.png)
+
+![изображение](https://user-images.githubusercontent.com/96256687/149000680-54fe3b1c-d397-4375-8016-825d54b0b4bb.png)
+
+![изображение](https://user-images.githubusercontent.com/96256687/149000974-b51c188d-de7e-4d90-9a8d-680586fe0455.png)
+
+![изображение](https://user-images.githubusercontent.com/96256687/149001464-f69e650d-b752-42a1-8990-55b9a41c662b.png)
+
+![изображение](https://user-images.githubusercontent.com/96256687/149001716-a64880e2-3eab-414b-ae3f-28d11f7a547f.png)
+
+
 
 
 
