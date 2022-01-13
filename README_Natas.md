@@ -157,6 +157,27 @@ URL:      http://natas7.natas.labs.overthewire.org
 DBfUBfqQG69KvJvJ1iAbMoIpwSNQ9bWe 
 ********************************
 
+**Natas Level 7 → Level 8
+-------------------------
+Username: natas8
+
+Password: DBfUBfqQG69KvJvJ1iAbMoIpwSNQ9bWe
+
+URL:      http://natas8.natas.labs.overthewire.org
+
+![изображение](https://user-images.githubusercontent.com/96256687/149389358-bb68e868-646f-4c5a-af1f-145fac70163f.png)
+
+![изображение](https://user-images.githubusercontent.com/96256687/149389652-0ae49069-3d82-4c62-bb6b-c3932f623f65.png)
+
+![изображение](https://user-images.githubusercontent.com/96256687/149392104-5597e5ec-48c3-438e-91e4-b609ff09ea17.png)
+
+![изображение](https://user-images.githubusercontent.com/96256687/149392198-1a4e5d9a-d0aa-472c-9925-81c509b3d09b.png)
+
+![изображение](https://user-images.githubusercontent.com/96256687/149392389-a763162f-3b71-4589-b24e-7647b3ebcfc1.png)
+
+Access granted. The password for natas9 is W0mMhUcRRnG8dcghE4qvk3JA9lGt8nDl
+***************************************************************************
+
 
 
 
